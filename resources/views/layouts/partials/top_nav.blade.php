@@ -42,6 +42,12 @@
                     <span class="d-none d-lg-inline"><i class="fe fe-book-open"></i> {{ __('lecturing.lecturing') }}</span>
                 </a>
             @endcan
+            @can('view-any', new App\Models\Event)
+                <a class="xs-navbar mr-4" href="{{ route('events.index') }}" title="{{ __('event.event') }}">
+                    <i class="fe fe-book-open h3 d-inline d-lg-none"></i>
+                    <span class="d-none d-lg-inline"><i class="fe fe-book-open"></i> {{ __('event.event') }}</span>
+                </a>
+            @endcan
             <a class="xs-navbar mr-4" href="{{ route('reports.index') }}" title="{{ __('report.report') }}">
                 <i class="fe fe-bar-chart-2 h3 d-inline d-lg-none"></i>
                 <span class="d-none d-lg-inline"><i class="fe fe-bar-chart-2"></i> {{ __('report.report') }}</span>
@@ -82,6 +88,12 @@
             <a class="col border-right border-primary" href="{{ route('lecturings.index') }}" title="{{ __('lecturing.lecturing') }}">
                 <div><i class="fe fe-book-open h3"></i></div>
                 {{ __('lecturing.lecturing') }}
+            </a>
+        @endcan
+        @can('view-any', new App\Models\Event)
+            <a class="col border-right border-primary" href="{{ route('events.index') }}" title="{{ __('event.event') }}">
+                <div><i class="fe fe-book-open h3"></i></div>
+                {{ __('event.event') }}
             </a>
         @endcan
         <a class="col border-right border-primary" href="{{ route('reports.index') }}" title="{{ __('report.report') }}">

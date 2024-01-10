@@ -4,30 +4,30 @@ namespace App\Models;
 
 use App\User;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Lecturing extends Model
+class Event extends Model
 {
-    const AUDIENCE_FRIDAY = 'friday';
     const AUDIENCE_PUBLIC = 'public';
     const AUDIENCE_MUSLIMAH = 'muslimah';
-
+    
+    
     protected $fillable = [
-        'audience_code', 'date', 'start_time', 'end_time', 'time_text', 'lecturer_name', 'title', 'book_title',
-        'book_writer', 'book_link', 'video_link', 'audio_link', 'description', 'creator_id',
+        'event_name', 'date', 'start_time', 'end_time', 'event_description', 'audience_code', 'creator_id',
     ];
 
     public function getTimeAttribute()
     {
         $time = $this->start_time.' - ';
-        $time .= !$this->end_time ? 'selesai' : $this->end_time;
+        $time .= !$this->end_time ? 'tamat' : $this->end_time;
 
         return $time;
     }
 
     public function getAudienceAttribute()
     {
-        return __('lecturing.audience_'.$this->audience_code);
+        return __('event.audience_'.$this->audience_code);
     }
 
     public function creator()

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use App\Models\Category;
+use App\Models\Event;
 use App\Models\Lecturing;
 use App\Transaction;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -162,6 +163,15 @@ class Controller extends BaseController
             Lecturing::AUDIENCE_FRIDAY => __('lecturing.audience_'.Lecturing::AUDIENCE_FRIDAY),
             Lecturing::AUDIENCE_PUBLIC => __('lecturing.audience_'.Lecturing::AUDIENCE_PUBLIC),
             Lecturing::AUDIENCE_MUSLIMAH => __('lecturing.audience_'.Lecturing::AUDIENCE_MUSLIMAH),
+        ];
+    }
+
+    protected function getEventAudienceCodeList(): array
+    {
+        return [
+            
+            Event::AUDIENCE_PUBLIC => __('event.audience_'.Event::AUDIENCE_PUBLIC),
+            Event::AUDIENCE_MUSLIMAH => __('event.audience_'.Event::AUDIENCE_MUSLIMAH),
         ];
     }
 }

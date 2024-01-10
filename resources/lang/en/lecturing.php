@@ -4,7 +4,7 @@ return [
     // Labels
     'lecturing' => 'Lecturing Schedule',
     'lecturing' => 'Lecturing',
-    'public_schedule' => 'Schedule',
+    'public_schedule' => 'Lecture Schedule',
     'list' => 'Lecturing Schedules',
     'search' => 'Find Lecturing Schedule',
     'search_text' => 'Lecturer name ...',

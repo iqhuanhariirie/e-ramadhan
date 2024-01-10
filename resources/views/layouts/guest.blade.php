@@ -44,6 +44,9 @@
                             <a class="p-2 {{ in_array(Request::segment(1), ['jadwal']) ? 'text-primary strong' : 'text-dark' }}" href="{{ route('public_schedules.index') }}">
                                 <i class="fe fe-calendar"></i> {{ __('lecturing.public_schedule') }}
                             </a>
+                            <a class="p-2 {{ in_array(Request::segment(1), ['jadual']) ? 'text-primary strong' : 'text-dark' }}" href="{{ route('public_schedules_event.index') }}">
+                                <i class="fe fe-calendar"></i> {{ __('event.public_schedule_event') }}
+                            </a>
                             @auth
                             <a class="p-2 text-dark" href="{{ route('home') }}"><i class="fe fe-user"></i> {{ auth()->user()->name }}</a>
                             @else

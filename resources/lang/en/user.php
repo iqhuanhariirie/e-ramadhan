@@ -6,7 +6,7 @@ return [
     'user' => 'User',
     'list' => 'User List',
     'profile' => 'User Profile',
-    'profile_edit' => 'Edit My Profil',
+    'profile_edit' => 'Edit My Profile',
     'profile_update' => 'Update Profile',
     'profile_updated' => 'Your profile has been updated.',
     'empty' => 'User is empty.',

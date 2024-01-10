@@ -1,4 +1,4 @@
-@foreach (['en', 'id'] as $langKey)
+@foreach (['en', 'my'] as $langKey)
 {!! FormField::formButton(
     [
         'method' => 'patch',

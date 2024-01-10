@@ -30,9 +30,9 @@ return [
 
     // Roles
     'role_admin' => 'Administrator',
-    'role_chairman' => 'Ketua',
-    'role_secretary' => 'Sekretaris',
-    'role_finance' => 'Bendahara',
+    'role_chairman' => 'Nazir',
+    'role_secretary' => 'Kerani',
+    'role_finance' => 'Bendahari',
 
     // Attributes
     'name' => 'Nama User',

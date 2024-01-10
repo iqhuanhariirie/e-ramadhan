@@ -30,6 +30,14 @@ Route::group(['prefix' => 'jadwal', 'as' => 'public_schedules.'], function () {
     Route::get('/pekan_depan', 'PublicScheduleController@nextWeek')->name('next_week');
 });
 
+Route::group(['prefix' => 'jadual', 'as' => 'public_schedules_event.'], function () {
+    Route::get('/', 'PublicScheduleEventController@today')->name('index');
+    Route::get('/harini', 'PublicScheduleEventController@today')->name('today');
+    Route::get('/esok', 'PublicScheduleEventController@tomorrow')->name('tomorrow');
+    Route::get('/minggu_ini', 'PublicScheduleEventController@thisWeek')->name('this_week');
+    Route::get('/minggu_depan', 'PublicScheduleEventController@nextWeek')->name('next_week');
+});
+
 // Change Password Routes
 Route::get('change-password', 'Auth\ChangePasswordController@show');
 Route::patch('change-password', 'Auth\ChangePasswordController@update')->name('password.change');
@@ -103,6 +111,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('masjid_profile', [App\Http\Controllers\MasjidProfileController::class, 'show'])->name('masjid_profile.show');
     Route::get('masjid_profile/edit', [App\Http\Controllers\MasjidProfileController::class, 'edit'])->name('masjid_profile.edit');
     Route::patch('masjid_profile', [App\Http\Controllers\MasjidProfileController::class, 'update'])->name('masjid_profile.update');
+
+    /*
+     * Events Routes
+     */
+    Route::resource('events', App\Http\Controllers\EventController::class);
 
     /*
      * Backup Restore Database Routes

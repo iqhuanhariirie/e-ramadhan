@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'currency_code' => env('MONEY_CURRENCY_CODE', 'Rp'),
+    'currency_code' => env('MONEY_CURRENCY_CODE', 'RM'),
 
     'precision' => env('MONEY_PRECISION', 2),
 

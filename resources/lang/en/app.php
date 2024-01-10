@@ -7,7 +7,7 @@ return [
     'yes' => 'Yes',
     'label' => 'Label',
     'action' => 'Action',
-    'welcome' => 'Assalamu\'alaikum',
+    'welcome' => 'Assalamualaikum',
     'active' => 'Active',
     'inactive' => 'Inactive',
     'show_detail_title' => 'View :name :type detail',
@@ -41,7 +41,7 @@ return [
     'done' => 'Done',
     'switch_lang' => 'Switch Lang',
     'switch_en_lang' => 'Use English',
-    'switch_id_lang' => 'Use Bahasa Indonesia',
+    'switch_my_lang' => 'Use Bahasa Malaysia',
 
     // Attributes
     'name' => 'Name',
