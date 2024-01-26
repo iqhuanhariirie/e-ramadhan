@@ -18,8 +18,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        require_once app_path().'/Helpers/functions.php';
-        require_once app_path().'/Helpers/date_time.php';
+        require_once app_path() . '/Helpers/functions.php';
+        require_once app_path() . '/Helpers/date_time.php';
         Paginator::useBootstrap();
 
         // Ref: https://dzone.com/articles/how-to-use-laravel-macro-with-example
@@ -56,7 +56,23 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer(['layouts._top_nav_active_book'], function ($view) {
             $activeBooks = Book::where('status_id', Book::STATUS_ACTIVE)->pluck('name', 'id');
-            return $view->with('activeBooks', $activeBooks);
+
+            $currentBalance = 0;
+            $startBalance = 0;
+            $currentIncomeTotal = 0;
+            $currentSpendingTotal = 0;
+
+            $currentTransactions = auth()->activeBook()->transactions()
+                ->withoutGlobalScope('forActiveBook')
+                ->get();
+            $currentIncomeTotal = $currentTransactions->where('in_out', 1)->sum('amount');
+            $currentSpendingTotal = $currentTransactions->where('in_out', 0)->sum('amount');
+            $endOfLastDate = today()->startOfWeek()->subDay()->format('d-m-Y');
+            $startBalance = auth()->activeBook()->budget;
+            $currentBalance = $startBalance + $currentIncomeTotal - $currentSpendingTotal;
+
+            return $view->with('activeBooks', $activeBooks)
+                ->with('currentBalance', $currentBalance);
         });
     }
 

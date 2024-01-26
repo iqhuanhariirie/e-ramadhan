@@ -56,7 +56,7 @@ class BookController extends Controller
             ->get();
         $currentIncomeTotal = $currentTransactions->where('in_out', 1)->sum('amount');
         $currentSpendingTotal = $currentTransactions->where('in_out', 0)->sum('amount');
-        $endOfLastDate = today()->startOfWeek()->subDay()->format('Y-m-d');
+        $endOfLastDate = today()->startOfWeek()->subDay()->format('d-m-Y');
         $startBalance = $book->getBalance($endOfLastDate);
         $currentBalance = $startBalance + $currentIncomeTotal - $currentSpendingTotal;
 

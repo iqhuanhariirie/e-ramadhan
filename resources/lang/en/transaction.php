@@ -18,7 +18,7 @@ return [
     'income_total' => 'Income Total',
     'spending_total' => 'Spending Total',
     'difference' => 'Difference',
-    'start_balance' => 'Start Balance',
+    'start_balance' => 'Funds received',
     'end_balance' => 'End Balance',
     'current_balance' => 'Current Balance',
     'balance' => 'Balance',

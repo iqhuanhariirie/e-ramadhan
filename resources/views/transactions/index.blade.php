@@ -7,7 +7,7 @@
     <h1 class="page-title">{{ __('transaction.list') }}</h1>
     <div class="page-subtitle">{{ __('app.total') }} : {{ $transactions->count() }} {{ __('transaction.transaction') }}</div>
     <div class="page-options d-flex">
-        {{ link_to_route('transaction_search.index', __('app.search'), [], ['class' => 'btn btn-secondary mr-2']) }}
+        <!-- {{ link_to_route('transaction_search.index', __('app.search'), [], ['class' => 'btn btn-secondary mr-2']) }} -->
         @can('create', new App\Transaction)
             @can('manage-transactions', auth()->activeBook())
                 {{ link_to_route('transactions.index', __('transaction.add_income'), ['action' => 'add-income', 'month' => $month, 'year' => $year], ['class' => 'btn btn-success mr-2']) }}
@@ -117,7 +117,8 @@
                                 $balance = 0;
                             @endphp
                             @if ($transactions->first())
-                                {{ format_number($balance = auth()->activeBook()->getBalance(Carbon\Carbon::parse($transactions->first()->date)->subDay()->format('Y-m-d'))) }}
+                                {{ format_number($balance = auth()->activeBook()->budget) }}
+                                
                             @else
                                 0
                             @endif

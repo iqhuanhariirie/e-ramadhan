@@ -24,7 +24,7 @@
                         <td class="text-center">{{ $key + 1 }}</td>
                         <td>{{ $backup->getFilename() }}</td>
                         <td>{{ format_size_units($backup->getSize()) }}</td>
-                        <td>{{ date('Y-m-d H:i:s', $backup->getMTime()) }}</td>
+                        <td>{{ date('d-m-Y H:i:s', $backup->getMTime()) }}</td>
                         <td class="text-center">
                             <div class="btn-group" role="group">
                                 <a href="{{ route('database_backups.index', ['action' => 'restore', 'file_name' => $backup->getFilename()]) }}"

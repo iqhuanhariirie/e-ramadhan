@@ -41,7 +41,7 @@ return [
     'done' => 'Done',
     'switch_lang' => 'Switch Lang',
     'switch_en_lang' => 'Use English',
-    'switch_my_lang' => 'Use Bahasa Malaysia',
+    'switch_ms_lang' => 'Use Bahasa Malaysia',
 
     // Attributes
     'name' => 'Name',

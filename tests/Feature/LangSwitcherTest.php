@@ -15,7 +15,7 @@ class LangSwitcherTest extends TestCase
         $user = $this->loginAsUser();
 
         $this->visitRoute('profile.show');
-        $this->seeElement('button', ['id' => 'lang_en']);
+        $this->seeElement('button', ['ms' => 'lang_en']);
 
         $this->press('lang_en');
 
@@ -23,15 +23,15 @@ class LangSwitcherTest extends TestCase
     }
 
     /** @test */
-    public function user_can_switch_id_lang()
+    public function user_can_switch_ms_lang()
     {
         $user = $this->loginAsUser();
 
         $this->visitRoute('profile.show');
-        $this->seeElement('button', ['id' => 'lang_id']);
+        $this->seeElement('button', ['ms' => 'lang_ms']);
 
-        $this->press('lang_id');
+        $this->press('lang_ms');
 
-        $this->seeInSession('lang', 'id');
+        $this->seeInSession('lang', 'ms');
     }
 }

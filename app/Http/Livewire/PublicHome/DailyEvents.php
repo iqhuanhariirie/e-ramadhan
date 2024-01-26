@@ -23,7 +23,7 @@ class DailyEvents extends Component
     public function mount()
     {
         $eventQuery = Event::query();
-        $eventQuery->where('date', $this->date->format('Y-m-d'));
+        $eventQuery->where('date', $this->date->format('d-m-Y'));
         $eventQuery->orderBy('date')->orderBy('start_time');
         $this->events = $eventQuery->get();
         $this->eventName = $this->getEventName();

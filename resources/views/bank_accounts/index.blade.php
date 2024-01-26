@@ -29,7 +29,7 @@
                     @if ($bankAccount->description)
                     <p><span class="text-primary">{{ __('app.description') }}</span>:<br>{{ $bankAccount->description }}</p>
                     @endif
-                    <p><span class="text-primary">{{ __('bank_account_balance.amount') }}</span>:<br><strong>Rp. {{ optional($bankAccount->lastBalance)->amount_string }}</strong></p>
+                    <p><span class="text-primary">{{ __('bank_account_balance.amount') }}</span>:<br><strong>RM {{ optional($bankAccount->lastBalance)->amount_string }}</strong></p>
                     <p><span class="text-primary">{{ __('bank_account_balance.date') }}</span>:<br><strong>{{ optional($bankAccount->lastBalance)->date }}</strong></p>
                 </div>
                 <div class="card-footer">

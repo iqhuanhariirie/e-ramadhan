@@ -121,7 +121,7 @@
         @if (auth()->activeBook()->bank_account_id)
         <tr class="strong">
             <td>&nbsp;</td>
-            <td class="text-center">Total saldo akhir per {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}</td>
+            <td class="text-center">Jumlah baki per {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}</td>
             <td class="text-right">-</td>
             <td class="text-right">-</td>
             <td class="text-right">

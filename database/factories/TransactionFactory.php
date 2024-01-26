@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 $factory->define(Transaction::class, function (Faker $faker) {
     return [
         'amount' => 99.99,
-        'date' => date('Y-m-d'),
+        'date' => date('d-m-Y'),
         'in_out' => 0, // 0:spending, 1:income
         'description' => $faker->sentence,
         'creator_id' => function () {

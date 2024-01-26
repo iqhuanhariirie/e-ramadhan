@@ -15,7 +15,7 @@ class Lang
      */
     public function handle($request, Closure $next)
     {
-        app()->setLocale(session('lang', 'id'));
+        app()->setLocale(session('lang', 'ms'));
 
         return $next($request);
     }

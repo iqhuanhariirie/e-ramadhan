@@ -4,7 +4,7 @@
             <span class="ml-2 d-lg-block">
                 <span class="text-default">{{ auth()->activeBook()->name }}</span>
                 <small class="text-muted d-block mt-1">
-                    {{ config('money.currency_code') }} {{ format_number(auth()->activeBook()->getBalance(date('Y-m-d'))) }}
+                    {{ config('money.currency_code') }} {{ format_number($currentBalance) }}
                 </small>
             </span>
         </a>

@@ -15,7 +15,7 @@
         @if (auth()->activeBook()->bank_account_id)
             <tr>
                 <td class="text-center">1</td>
-                <td>Saldo per {{ Carbon\Carbon::parse($lastBankAccountBalanceOfTheMonth->date)->isoFormat('D MMMM Y') }} di BANK</td>
+                <td>Baki mengikut {{ Carbon\Carbon::parse($lastBankAccountBalanceOfTheMonth->date)->isoFormat('D MMMM Y') }} di BANK</td>
                 <td class="text-right">-</td>
                 <td class="text-right">-</td>
                 <td class="text-right text-nowrap">{{ format_number($lastBankAccountBalanceOfTheMonth->amount) }}</td>
@@ -26,7 +26,7 @@
                 <td class="text-center">
                     {{ auth()->activeBook()->bank_account_id ? '2' : '1' }}
                 </td>
-                <td>Sisa saldo per {{ $lastMonthDate->isoFormat('D MMMM Y') }}</td>
+                <td>Baki mengikut {{ $lastMonthDate->isoFormat('D MMMM Y') }}</td>
                 <td class="text-right text-nowrap">{{ format_number($lastMonthBalance) }}</td>
                 <td class="text-right text-nowrap">-</td>
                 <td class="text-center text-nowrap">&nbsp;</td>
@@ -97,7 +97,7 @@
         <tr class="strong">
             <td>&nbsp;</td>
             <td class="text-center">
-                {{ auth()->activeBook()->bank_account_id ? 'Selisih' : '' }} Saldo {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}
+                {{ auth()->activeBook()->bank_account_id ? 'Selisih' : '' }} baki {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}
             </td>
             <td class="text-right">
                 @php
@@ -121,7 +121,7 @@
         @if (auth()->activeBook()->bank_account_id)
         <tr class="strong">
             <td>&nbsp;</td>
-            <td class="text-center">Total saldo akhir per {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}</td>
+            <td class="text-center">Total baki akhir mengikut {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}</td>
             <td class="text-right">-</td>
             <td class="text-right">-</td>
             <td class="text-right">

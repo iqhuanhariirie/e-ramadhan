@@ -31,10 +31,12 @@ RUN composer install --optimize-autoloader --no-dev --no-interaction --no-progre
 
 # artisan commands
 RUN php ./artisan key:generate && \
-    php ./artisan passport:keys && \
+    php ./artisan passport:keys --force && \
     php ./artisan view:cache && \
     php ./artisan route:cache && \
     php ./artisan config:cache && \
     php ./artisan storage:link
+
+RUN chmod -R 777 storage && chmod -R 777 bootstrap/cache
 
 USER root:root

@@ -17,7 +17,7 @@ class InternalFinanceController extends FinanceController
         $endDate = $this->getEndDate($request);
         $book = auth()->activeBook();
 
-        $groupedTransactions = $this->getTansactionsByDateRange($startDate->format('Y-m-d'), $endDate->format('Y-m-d'))->groupBy('in_out');
+        $groupedTransactions = $this->getTansactionsByDateRange($startDate->format('d-m-Y'), $endDate->format('d-m-Y'))->groupBy('in_out');
         $incomeCategories = isset($groupedTransactions[1]) ? $groupedTransactions[1]->pluck('category')->unique()->filter() : collect([]);
         $spendingCategories = isset($groupedTransactions[0]) ? $groupedTransactions[0]->pluck('category')->unique()->filter() : collect([]);
         $lastMonthDate = $startDate->clone()->subDay();
@@ -26,7 +26,7 @@ class InternalFinanceController extends FinanceController
             $currentMonthEndDate = Carbon::now();
         }
         $lastBankAccountBalanceOfTheMonth = $this->getLastBankAccountBalance($currentMonthEndDate);
-        $lastMonthBalance = auth()->activeBook()->getBalance($lastMonthDate->format('Y-m-d'));
+        $lastMonthBalance = auth()->activeBook()->getBalance($lastMonthDate->format('d-m-Y'));
 
         $reportPeriode = $book->report_periode_code;
         $showBudgetSummary = $this->determineBudgetSummaryVisibility($request, $book);
@@ -44,7 +44,7 @@ class InternalFinanceController extends FinanceController
         $endDate = $this->getEndDate($request);
         $book = auth()->activeBook();
 
-        $groupedTransactions = $this->getTansactionsByDateRange($startDate->format('Y-m-d'), $endDate->format('Y-m-d'))->groupBy('in_out');
+        $groupedTransactions = $this->getTansactionsByDateRange($startDate->format('d-m-Y'), $endDate->format('d-m-Y'))->groupBy('in_out');
         $incomeCategories = isset($groupedTransactions[1]) ? $groupedTransactions[1]->pluck('category')->unique()->filter() : collect([]);
         $spendingCategories = isset($groupedTransactions[0]) ? $groupedTransactions[0]->pluck('category')->unique()->filter() : collect([]);
         $lastMonthDate = $startDate->clone()->subDay();
@@ -53,7 +53,7 @@ class InternalFinanceController extends FinanceController
             $currentMonthEndDate = Carbon::now();
         }
         $lastBankAccountBalanceOfTheMonth = $this->getLastBankAccountBalance($currentMonthEndDate);
-        $lastMonthBalance = auth()->activeBook()->getBalance($lastMonthDate->format('Y-m-d'));
+        $lastMonthBalance = auth()->activeBook()->getBalance($lastMonthDate->format('d-m-Y'));
         $showLetterhead = $this->showLetterhead();
 
         $reportPeriode = $book->report_periode_code;
@@ -77,7 +77,7 @@ class InternalFinanceController extends FinanceController
         $endDate = $this->getEndDate($request);
         $book = auth()->activeBook();
 
-        $groupedTransactions = $this->getTansactionsByDateRange($startDate->format('Y-m-d'), $endDate->format('Y-m-d'))->groupBy('in_out');
+        $groupedTransactions = $this->getTansactionsByDateRange($startDate->format('d-m-Y'), $endDate->format('d-m-Y'))->groupBy('in_out');
         $incomeCategories = isset($groupedTransactions[1]) ? $groupedTransactions[1]->pluck('category')->unique()->filter() : collect([]);
         $spendingCategories = isset($groupedTransactions[0]) ? $groupedTransactions[0]->pluck('category')->unique()->filter() : collect([]);
         $currentMonthEndDate = $endDate->clone();
@@ -96,7 +96,7 @@ class InternalFinanceController extends FinanceController
         $endDate = $this->getEndDate($request);
         $book = auth()->activeBook();
 
-        $groupedTransactions = $this->getTansactionsByDateRange($startDate->format('Y-m-d'), $endDate->format('Y-m-d'))->groupBy('in_out');
+        $groupedTransactions = $this->getTansactionsByDateRange($startDate->format('d-m-Y'), $endDate->format('d-m-Y'))->groupBy('in_out');
         $incomeCategories = isset($groupedTransactions[1]) ? $groupedTransactions[1]->pluck('category')->unique()->filter() : collect([]);
         $spendingCategories = isset($groupedTransactions[0]) ? $groupedTransactions[0]->pluck('category')->unique()->filter() : collect([]);
         $currentMonthEndDate = $endDate->clone();
@@ -122,7 +122,7 @@ class InternalFinanceController extends FinanceController
         $endDate = $this->getEndDate($request);
         $book = auth()->activeBook();
 
-        $groupedTransactions = $this->getWeeklyGroupedTransactions($startDate->format('Y-m-d'), $endDate->format('Y-m-d'));
+        $groupedTransactions = $this->getWeeklyGroupedTransactions($startDate->format('d-m-Y'), $endDate->format('d-m-Y'));
         $currentMonthEndDate = $endDate->clone();
 
         $reportPeriode = $book->report_periode_code;
@@ -138,7 +138,7 @@ class InternalFinanceController extends FinanceController
         $endDate = $this->getEndDate($request);
         $book = auth()->activeBook();
 
-        $groupedTransactions = $this->getWeeklyGroupedTransactions($startDate->format('Y-m-d'), $endDate->format('Y-m-d'));
+        $groupedTransactions = $this->getWeeklyGroupedTransactions($startDate->format('d-m-Y'), $endDate->format('d-m-Y'));
         $currentMonthEndDate = $endDate->clone();
         $showLetterhead = $this->showLetterhead();
         $reportPeriode = $book->report_periode_code;
@@ -172,7 +172,7 @@ class InternalFinanceController extends FinanceController
                     'date' => null,
                     'description' => 'Saldo per '.$lastWeekDate->isoFormat('D MMMM Y'),
                     'in_out' => 1,
-                    'amount' => auth()->activeBook()->getBalance($lastWeekDate->format('Y-m-d')),
+                    'amount' => auth()->activeBook()->getBalance($lastWeekDate->format('d-m-Y')),
                 ]);
                 $firstBalance->is_strong = 1;
                 $weekTransactions->prepend($firstBalance);
@@ -189,19 +189,19 @@ class InternalFinanceController extends FinanceController
         $activeBookBankAccount = auth()->activeBook()->bankAccount;
         if (is_null($activeBookBankAccount)) {
             return new BankAccountBalance([
-                'date' => $currentMonthEndDate->format('Y-m-d'),
+                'date' => $currentMonthEndDate->format('d-m-Y'),
                 'amount' => 0,
             ]);
         }
 
         $currentMonthBalance = $activeBookBankAccount->balances()
-            ->where('date', '<=', $currentMonthEndDate->format('Y-m-d'))
+            ->where('date', '<=', $currentMonthEndDate->format('d-m-Y'))
             ->orderBy('date', 'desc')
             ->first();
 
         if (is_null($currentMonthBalance)) {
             return new BankAccountBalance([
-                'date' => $currentMonthEndDate->format('Y-m-d'),
+                'date' => $currentMonthEndDate->format('d-m-Y'),
                 'amount' => 0,
             ]);
         }

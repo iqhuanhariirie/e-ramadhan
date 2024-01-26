@@ -14,9 +14,9 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'date' => ['required', 'date_format:Y-m-d'],
-            'start_time' => ['required', 'date_format:H:i'],
-            'end_time' => ['nullable', 'date_format:H:i'],
+            'date' => ['required', 'date_format:d-m-Y'],
+            'start_time' => ['required', 'date_format:H:i:s'],
+            'end_time' => ['nullable', 'date_format:H:i:s'],
             'time_text' => ['nullable', 'max:20'],
             'lecturer_name' => ['required', 'max:60'],
             'title' => ['nullable', 'max:60'],

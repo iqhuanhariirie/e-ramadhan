@@ -19,8 +19,8 @@ return [
     'level' => 'Level',
     'not_available' => 'Tidak Tersedia',
     'system' => 'Sistem',
-    'home' => 'Beranda',
-    'public_home' => 'Beranda Publik',
+    'home' => 'Home',
+    'public_home' => 'Dashboard',
 
     // Action
     'create' => 'Input',
@@ -42,7 +42,7 @@ return [
     'done' => 'Selesai',
     'switch_lang' => 'Ganti Bahasa',
     'switch_en_lang' => 'Gunakan Bahasa Inggeris',
-    'switch_my_lang' => 'Gunakan Bahasa Melayu',
+    'switch_ms_lang' => 'Gunakan Bahasa Melayu',
 
     // Attributes
     'name' => 'Nama',
@@ -53,7 +53,7 @@ return [
     'time' => 'Waktu',
     'created_at' => 'Dibuat pada',
     'created_by' => 'Oleh',
-    'start_date' => 'Tarikh Mulai',
+    'start_date' => 'Tarikh Mula',
     'end_date' => 'Tarikh Selesai',
     'gender' => 'Jantina',
     'gender_male' => 'Lelaki',

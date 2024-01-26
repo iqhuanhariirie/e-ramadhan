@@ -16,21 +16,21 @@ class FinanceController extends Controller
         }
 
         if ($book->report_periode_code == Book::REPORT_PERIODE_IN_MONTHS) {
-            $startDate = $this->getStartDate($request)->format('Y-m-d');
-            $endDate = $this->getEndDate($request)->format('Y-m-d');
-            $expextedStartDate = Carbon::now()->startOfMonth()->format('Y-m-d');
-            $expextedEndDate = Carbon::now()->endOfMonth()->format('Y-m-d');
+            $startDate = $this->getStartDate($request)->format('d-m-Y');
+            $endDate = $this->getEndDate($request)->format('d-m-Y');
+            $expextedStartDate = Carbon::now()->startOfMonth()->format('d-m-Y');
+            $expextedEndDate = Carbon::now()->endOfMonth()->format('d-m-Y');
 
             return $expextedStartDate == $startDate && $expextedEndDate == $endDate;
         }
 
         if ($book->report_periode_code == Book::REPORT_PERIODE_IN_WEEKS) {
-            $startDate = $this->getStartDate($request)->format('Y-m-d');
-            $endDate = $this->getEndDate($request)->format('Y-m-d');
+            $startDate = $this->getStartDate($request)->format('d-m-Y');
+            $endDate = $this->getEndDate($request)->format('d-m-Y');
             $startDayInteger = constant('\Carbon\Carbon::'.strtoupper($book->start_week_day_code));
-            $expextedStartDate = Carbon::now()->startOfWeek($startDayInteger)->format('Y-m-d');
+            $expextedStartDate = Carbon::now()->startOfWeek($startDayInteger)->format('d-m-Y');
             $endDayInteger = constant('\Carbon\Carbon::'.strtoupper($book->start_week_day_code));
-            $expextedEndDate = Carbon::now()->endOfWeek($endDayInteger)->subDay()->format('Y-m-d');
+            $expextedEndDate = Carbon::now()->endOfWeek($endDayInteger)->subDay()->format('d-m-Y');
 
             return $expextedStartDate == $startDate && $expextedEndDate == $endDate;
         }

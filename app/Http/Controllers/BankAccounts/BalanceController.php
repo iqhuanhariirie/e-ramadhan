@@ -14,7 +14,7 @@ class BalanceController extends Controller
         $this->authorize('update', $bankAccount);
 
         $newBankAccountBalance = $request->validate([
-            'date' => 'required|date_format:Y-m-d',
+            'date' => 'required|date_format:d-m-Y',
             'amount' => 'required|numeric',
             'description' => 'nullable|max:255',
         ]);
@@ -31,7 +31,7 @@ class BalanceController extends Controller
         $this->authorize('update', $bankAccount);
 
         $bankAccountBalanceData = $request->validate([
-            'date' => 'required|date_format:Y-m-d',
+            'date' => 'required|date_format:d-m-Y',
             'amount' => 'required|numeric',
             'description' => 'nullable|max:255',
         ]);

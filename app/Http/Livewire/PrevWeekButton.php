@@ -18,21 +18,21 @@ class PrevWeekButton extends Component
         $book = auth()->activeBook();
 
         $startDayInteger = constant('\Carbon\Carbon::'.strtoupper($book->start_week_day_code));
-        $startDate = Carbon::now()->startOfWeek($startDayInteger)->subWeek()->format('Y-m-d');
+        $startDate = Carbon::now()->startOfWeek($startDayInteger)->subWeek()->format('d-m-Y');
 
         if (request('start_date')) {
-            $startDate = Carbon::parse(request('start_date'))->subWeek()->format('Y-m-d');
+            $startDate = Carbon::parse(request('start_date'))->subWeek()->format('d-m-Y');
         }
 
         $endDayInteger = constant('\Carbon\Carbon::'.strtoupper($book->start_week_day_code));
         if (strtolower(Carbon::now()->format('l')) == $book->start_week_day_code) {
-            $endDate = Carbon::now()->addDay()->endOfWeek($endDayInteger)->subDay()->subWeek()->format('Y-m-d');
+            $endDate = Carbon::now()->addDay()->endOfWeek($endDayInteger)->subDay()->subWeek()->format('d-m-Y');
         } else {
-            $endDate = Carbon::now()->endOfWeek($endDayInteger)->subDay()->subWeek()->format('Y-m-d');
+            $endDate = Carbon::now()->endOfWeek($endDayInteger)->subDay()->subWeek()->format('d-m-Y');
         }
 
         if (request('end_date')) {
-            $endDate = Carbon::parse(request('end_date'))->subWeek()->format('Y-m-d');
+            $endDate = Carbon::parse(request('end_date'))->subWeek()->format('d-m-Y');
         }
 
         $this->startDate = $startDate;

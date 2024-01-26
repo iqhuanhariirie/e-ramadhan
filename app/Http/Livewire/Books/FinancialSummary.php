@@ -51,7 +51,7 @@ class FinancialSummary extends Component
         $this->currentBudget = $book->budget;
         $this->currentIncomeTotal += $this->startBalance;
         $this->currentBalance -= $this->startBalance;
-        $this->budgetDifference = $book->budget - $this->currentIncomeTotal;
+        $this->budgetDifference = $book->budget - $this->currentBalance;
         $this->currentPeriodeBudgetLabel = __('report.current_'.$book->report_periode_code.'_budget');
 
         $this->budgetDifferenceColorClass = 'text-red';

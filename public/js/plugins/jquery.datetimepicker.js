@@ -72,6 +72,14 @@
 					"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
 				]
 			},
+			ms: { // Malay
+				months: [
+					"Januari", "Februari", "Mac", "April", "Mei", "Jun", "Julai", "Ogos", "September", "Oktober", "November", "Disember"
+				],
+				dayOfWeek: [
+					"Ahad", "Isnin", "Selasa", "Rabu", "Khamis", "Jumaat", "Sabtu"
+				]
+			},
 			el: { // Ελληνικά
 				months: [
 					"Ιανουάριος", "Φεβρουάριος", "Μάρτιος", "Απρίλιος", "Μάιος", "Ιούνιος", "Ιούλιος", "Αύγουστος", "Σεπτέμβριος", "Οκτώβριος", "Νοέμβριος", "Δεκέμβριος"
@@ -436,9 +444,9 @@
 		value: '',
 		lang: 'en',
 
-		format:	'Y/m/d H:i',
-		formatTime:	'H:i',
-		formatDate:	'Y/m/d',
+		format:	'd/m/Y H:i',
+		formatTime:	'H:i:s',
+		formatDate:	'd/m/Y',
 
 		startDate:	false, // new Date(), '1986/12/08', '-1970/01/05','-1970/01/05',
 		step: 60,

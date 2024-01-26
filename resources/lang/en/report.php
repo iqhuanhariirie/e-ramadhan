@@ -2,7 +2,7 @@
 
 return [
     'report' => 'Report',
-    'periode' => 'Report Periode',
+    'periode' => 'Report Period',
     'start_week_day' => 'Start Week Day',
     'in_months' => 'In Months',
     'in_weeks' => 'In Weeks',
@@ -35,11 +35,11 @@ return [
     'current_week_spending_total' => 'Current week spending',
     'current_in_months_budget' => 'Current Month Budget',
     'current_in_weeks_budget' => 'Current Week Budget',
-    'current_all_time_budget' => 'Current Periode Budget',
+    'current_all_time_budget' => 'Current Period Budget',
     'current_periode_income_total' => 'Total Income',
     'current_periode_spending_total' => 'Total Spending',
-    'current_periode_budget_remaining' => 'Current Periode Budget Remaining',
-    'current_periode_budget_excess' => 'Budget Excess',
+    'current_periode_budget_remaining' => 'Fund Deficit',
+    'current_periode_budget_excess' => 'Fund Excess',
     'view_monthly' => 'Monthly Report',
     'monthly' => 'Report Month',
     'view_weekly' => 'Weekly Report',
