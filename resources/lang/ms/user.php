@@ -8,25 +8,25 @@ return [
     'profile' => 'Profil User',
     'profile_edit' => 'Edit Profil Saya',
     'profile_update' => 'Update Profil',
-    'profile_updated' => 'Update Profil anda berhasil.',
+    'profile_updated' => 'Update Profil anda berjaya.',
     'empty' => 'Belum ada User',
     'back_to_index' => 'Kembali ke Daftar User',
     'search' => 'Cari User',
     'search_text' => 'Nama / email ...',
-    'not_found' => 'User tidak ditemukan.',
+    'not_found' => 'User tidak dapat ditemukan.',
 
     // Actions
     'show' => 'Lihat Detail',
     'create' => 'Input User Baru',
-    'created' => 'Input User baru telah berhasil.',
+    'created' => 'Input User baru telah berjaya.',
     'edit' => 'Edit User',
     'update' => 'Update Data User',
-    'updated' => 'Update data User telah berhasil.',
+    'updated' => 'Update data User telah berjaya.',
     'delete' => 'Hapus User',
     'delete_confirm' => 'Anda yakin akan menghapus user ini?',
-    'undeleteable' => 'Data User ini tidak dapat dihapus, silakan di nonaktifkan saja.',
-    'deleted' => 'Hapus data User telah berhasil.',
-    'undeleted' => 'Data User gagal dihapus.',
+    'undeleteable' => 'Data User ini tidak dapat dihapuskan, hanya boleh nyahaktifkan sahaja.',
+    'deleted' => 'Hapus data User telah berjaya.',
+    'undeleted' => 'Data User gagal dihapuskan.',
 
     // Roles
     'role_admin' => 'Administrator',
@@ -37,7 +37,7 @@ return [
     // Attributes
     'name' => 'Nama User',
     'email' => 'Alamat Email',
-    'phone' => 'Telp/Hp.',
+    'phone' => 'No. Telefon',
     'is_active' => 'Status User',
     'registered_at' => 'Terdaftar sejak',
 
