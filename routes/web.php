@@ -15,19 +15,19 @@ Route::view('/', 'guest.welcome');
 
 Auth::routes(['register' => false, 'reset' => false]);
 
-Route::group(['prefix' => 'laporan-kas', 'as' => 'public_reports.'], function () {
+Route::group(['prefix' => 'laporan-umum', 'as' => 'public_reports.'], function () {
     Route::get('/', 'Reports\PublicFinanceController@index')->name('index');
     Route::get('/ringkasan', 'Reports\PublicFinanceController@summary')->name('finance.summary');
-    Route::get('/per_kategori', 'Reports\PublicFinanceController@categorized')->name('finance.categorized');
-    Route::get('/rincian', 'Reports\PublicFinanceController@detailed')->name('finance.detailed');
+    Route::get('/kategori', 'Reports\PublicFinanceController@categorized')->name('finance.categorized');
+    Route::get('/detail', 'Reports\PublicFinanceController@detailed')->name('finance.detailed');
 });
 
-Route::group(['prefix' => 'jadwal', 'as' => 'public_schedules.'], function () {
+Route::group(['prefix' => 'jadual1', 'as' => 'public_schedules.'], function () {
     Route::get('/', 'PublicScheduleController@today')->name('index');
-    Route::get('/hari_ini', 'PublicScheduleController@today')->name('today');
-    Route::get('/besok', 'PublicScheduleController@tomorrow')->name('tomorrow');
-    Route::get('/pekan_ini', 'PublicScheduleController@thisWeek')->name('this_week');
-    Route::get('/pekan_depan', 'PublicScheduleController@nextWeek')->name('next_week');
+    Route::get('/today', 'PublicScheduleController@today')->name('today');
+    Route::get('/tomorrow', 'PublicScheduleController@tomorrow')->name('tomorrow');
+    Route::get('/this_week', 'PublicScheduleController@thisWeek')->name('this_week');
+    Route::get('/next_week', 'PublicScheduleController@nextWeek')->name('next_week');
 });
 
 Route::group(['prefix' => 'jadual', 'as' => 'public_schedules_event.'], function () {

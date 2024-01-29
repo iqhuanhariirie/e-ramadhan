@@ -97,7 +97,7 @@
         <tr class="strong">
             <td>&nbsp;</td>
             <td class="text-center">
-                {{ auth()->activeBook()->bank_account_id ? 'Selisih' : '' }} baki {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}
+                {{ auth()->activeBook()->bank_account_id ? 'Selisih' : '' }} {{ __('transaction.balance') }} {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}
             </td>
             <td class="text-right">
                 @php

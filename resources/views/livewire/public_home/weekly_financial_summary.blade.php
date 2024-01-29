@@ -1,7 +1,7 @@
 <div class="page-header">
     <h3 class="page-title">{{ __('report.summary_weekly') }}</h3>
     <div class="page-options d-flex">
-        <a class="btn btn-sm btn-success" href="{{ route('public_reports.finance.detailed') }}"
+        <a class="btn btn-sm btn-success" href="{{ route('public_reports.finance.summary') }}"
             role="button">{{ __('app.show') }}</a>
     </div>
 </div>
@@ -13,7 +13,7 @@
                     <span id="start_week_label">{{ __('report.balance_per_date', ['date' => $startWeek->isoFormat('dddd, D MMMM Y')]) }}</span>
                 </td>
                 <td class="col-1 text-right">
-                    <span id="start_week_balance">{{ format_number($startWeekBalance) }}</span>
+                    <span id="start_week_balance">{{ format_number($startWeekBalance + $startBalance) }}</span>
                 </td>
             </tr>
             <tr>

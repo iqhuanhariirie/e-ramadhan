@@ -17,7 +17,7 @@ return [
 
     'income_total' => 'Total Kemasukan',
     'spending_total' => 'Total Pengeluaran',
-    'difference' => 'Selisih',
+    'difference' => 'Kemasukan Bersih',
     'start_balance' => 'Dana yang diberi',
     'end_balance' => 'Baki Akhir',
     'current_balance' => 'Baki Sekarang',

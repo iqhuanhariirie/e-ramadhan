@@ -19,10 +19,10 @@
 @if ($lecturings->isEmpty())
     <p class="my-4">
         {{ __('lecturing.empty') }}
-        {{ in_array(Request::segment(2), [null, 'hari_ini']) ? __('time.today').'.' : '' }}
-        {{ in_array(Request::segment(2), ['besok']) ? __('time.tomorrow').'.' : '' }}
-        {{ Request::segment(2) == 'pekan_ini' ? __('time.this_week').'.' : '' }}
-        {{ Request::segment(2) == 'pekan_depan' ? __('time.next_week').'.' : '' }}
+        {{ in_array(Request::segment(2), [null, 'today']) ? __('time.today').'.' : '' }}
+        {{ in_array(Request::segment(2), ['tomorrow']) ? __('time.tomorrow').'.' : '' }}
+        {{ Request::segment(2) == 'this_week' ? __('time.this_week').'.' : '' }}
+        {{ Request::segment(2) == 'next_week' ? __('time.next_week').'.' : '' }}
     </p>
 @endif
 
