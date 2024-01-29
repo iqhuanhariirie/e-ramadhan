@@ -13,7 +13,7 @@ return [
     // Create backup file
     'create' => 'Buat Backup Baru',
     'created' => 'Backup file :filename berhasil dibuat.',
-    'not_created' => 'Backup file dengan nama :filename sudah ada.',
+    'not_created' => 'Backup file dengan nama :filename sudah tersedia.',
 
     // Hapus backup file
     'delete' => 'Hapus',
