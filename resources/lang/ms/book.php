@@ -35,7 +35,7 @@ return [
 
     // Attributes
     'name' => 'Nama Buku Tunai',
-    'description' => 'Deskripsi Buku Tunai',
+    'description' => 'Penerangan Buku Tunai',
     'status_inactive' => 'Tutup Buku',
     'budget' => 'Dana',
     'budget_difference' => 'Kekurangan/Kelebihan',

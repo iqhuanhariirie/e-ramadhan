@@ -31,7 +31,7 @@ return [
     // Roles
     'role_admin' => 'Administrator',
     'role_chairman' => 'Nazir',
-    'role_secretary' => 'Kerani',
+    'role_secretary' => 'Setiausaha',
     'role_finance' => 'Bendahari',
 
     // Attributes

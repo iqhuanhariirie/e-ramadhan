@@ -103,7 +103,7 @@
     });
     $('.date-select').datetimepicker({
         timepicker:false,
-        format:'d-m-Y',
+        format:'Y-m-d',
         closeOnDateSelect: true,
         scrollInput: false,
         dayOfWeekStart: 1

@@ -44,7 +44,7 @@ class DatabaseBackupController extends Controller
         ]);
 
         $manager = app()->make(Manager::class);
-        $fileName = $validatedPayload['file_name'] ?: date('d-m-Y H:i:s');
+        $fileName = $validatedPayload['file_name'] ?: date('Y-m-d H:i');
 
         $manager->makeBackup()->run('mysql', [
             new Destination('local', 'backup/db/'.$fileName),

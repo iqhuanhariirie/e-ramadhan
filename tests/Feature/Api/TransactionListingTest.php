@@ -52,8 +52,8 @@ class TransactionListingTest extends TestCase
             'category_id' => $transaction->category_id,
             'category' => optional($transaction->category)->name,
             'category_color' => optional($transaction->category)->color,
-            'created_at' => $transaction->created_at->format('Y-m-d H:i:s'),
-            'updated_at' => $transaction->updated_at->format('Y-m-d H:i:s'),
+            'created_at' => $transaction->created_at->format('Y-m-d H:i'),
+            'updated_at' => $transaction->updated_at->format('Y-m-d H:i'),
         ]);
     }
 }

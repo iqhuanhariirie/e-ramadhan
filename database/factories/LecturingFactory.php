@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 $factory->define(Lecturing::class, function (Faker $faker) {
     return [
         'audience_code' => Lecturing::AUDIENCE_PUBLIC,
-        'date' => today()->format('d-m-Y'),
+        'date' => today()->format('Y-m-d'),
         'start_time' => '06:00',
         'end_time' => null,
         'time_text' => 'Ba\'da Subuh',

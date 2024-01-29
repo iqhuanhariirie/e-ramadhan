@@ -35,4 +35,5 @@
 </ul>
 
 @yield('content_settings')
+
 @endsection

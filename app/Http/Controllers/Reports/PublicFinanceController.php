@@ -27,7 +27,7 @@ class PublicFinanceController extends FinanceController
         $endDate = $this->getEndDate($request);
         $book = auth()->activeBook();
 
-        $groupedTransactions = $this->getTansactionsByDateRange($startDate->format('d-m-Y'), $endDate->format('d-m-Y'))->groupBy('in_out');
+        $groupedTransactions = $this->getTansactionsByDateRange($startDate->format('Y-m-d'), $endDate->format('Y-m-d'))->groupBy('in_out');
         $incomeCategories = isset($groupedTransactions[1]) ? $groupedTransactions[1]->pluck('category')->unique()->filter() : collect([]);
         $spendingCategories = isset($groupedTransactions[0]) ? $groupedTransactions[0]->pluck('category')->unique()->filter() : collect([]);
         $lastMonthDate = $startDate->clone()->subDay();
@@ -36,7 +36,7 @@ class PublicFinanceController extends FinanceController
             $currentMonthEndDate = Carbon::now();
         }
         $lastBankAccountBalanceOfTheMonth = $this->getLastBankAccountBalance($currentMonthEndDate);
-        $lastMonthBalance = auth()->activeBook()->getBalance($lastMonthDate->format('d-m-Y'));
+        $lastMonthBalance = auth()->activeBook()->getBalance($lastMonthDate->format('Y-m-d'));
         $lastBudget = auth()->activeBook()->getCurrentBudget();
 
         $reportPeriode = $book->report_periode_code;
@@ -56,7 +56,7 @@ class PublicFinanceController extends FinanceController
         $endDate = $this->getEndDate($request);
         $book = auth()->activeBook();
 
-        $groupedTransactions = $this->getTansactionsByDateRange($startDate->format('d-m-Y'), $endDate->format('d-m-Y'))->groupBy('in_out');
+        $groupedTransactions = $this->getTansactionsByDateRange($startDate->format('Y-m-d'), $endDate->format('Y-m-d'))->groupBy('in_out');
         $incomeCategories = isset($groupedTransactions[1]) ? $groupedTransactions[1]->pluck('category')->unique()->filter() : collect([]);
         $spendingCategories = isset($groupedTransactions[0]) ? $groupedTransactions[0]->pluck('category')->unique()->filter() : collect([]);
         $currentMonthEndDate = $endDate->clone();
@@ -75,7 +75,7 @@ class PublicFinanceController extends FinanceController
         $endDate = $this->getEndDate($request);
         $book = auth()->activeBook();
 
-        $groupedTransactions = $this->getWeeklyGroupedTransactions($startDate->format('d-m-Y'), $endDate->format('d-m-Y'));
+        $groupedTransactions = $this->getWeeklyGroupedTransactions($startDate->format('Y-m-d'), $endDate->format('Y-m-d'));
         $currentMonthEndDate = $endDate->clone();
 
         $reportPeriode = $book->report_periode_code;
@@ -104,7 +104,7 @@ class PublicFinanceController extends FinanceController
                     'date' => null,
                     'description' => 'Saldo per '.$lastWeekDate->isoFormat('D MMMM Y'),
                     'in_out' => 1,
-                    'amount' => auth()->activeBook()->getBalance($lastWeekDate->format('d-m-Y')),
+                    'amount' => auth()->activeBook()->getBalance($lastWeekDate->format('Y-m-d')),
                 ]);
                 $firstBalance->is_strong = 1;
                 $weekTransactions->prepend($firstBalance);
@@ -121,19 +121,19 @@ class PublicFinanceController extends FinanceController
         $activeBookBankAccount = auth()->activeBook()->bankAccount;
         if (is_null($activeBookBankAccount)) {
             return new BankAccountBalance([
-                'date' => $currentMonthEndDate->format('d-m-Y'),
+                'date' => $currentMonthEndDate->format('Y-m-d'),
                 'amount' => 0,
             ]);
         }
 
         $currentMonthBalance = $activeBookBankAccount->balances()
-            ->where('date', '<=', $currentMonthEndDate->format('d-m-Y'))
+            ->where('date', '<=', $currentMonthEndDate->format('Y-m-d'))
             ->orderBy('date', 'desc')
             ->first();
 
         if (is_null($currentMonthBalance)) {
             return new BankAccountBalance([
-                'date' => $currentMonthEndDate->format('d-m-Y'),
+                'date' => $currentMonthEndDate->format('Y-m-d'),
                 'amount' => 0,
             ]);
         }

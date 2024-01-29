@@ -83,13 +83,13 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                             {!! FormField::select('report_periode_code', [
                                 App\Models\Book::REPORT_PERIODE_IN_MONTHS => __('report.in_months'),
                                 App\Models\Book::REPORT_PERIODE_IN_WEEKS => __('report.in_weeks'),
                                 App\Models\Book::REPORT_PERIODE_ALL_TIME => __('report.all_time'),
                             ], ['label' => __('report.periode'), 'placeholder' => false]) !!}
-                        </div>
+                        </div> -->
                         <div class="col-md-6">
                             {!! FormField::select('start_week_day_code', [
                                 'monday' => __('time.days.monday'),

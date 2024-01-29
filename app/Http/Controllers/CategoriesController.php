@@ -44,7 +44,7 @@ class CategoriesController extends Controller
 
         $defaultStartDate = date('Y-m').'-01';
         $startDate = request('start_date', $defaultStartDate);
-        $endDate = request('end_date', date('d-m-Y'));
+        $endDate = request('end_date', date('Y-m-d'));
 
         $transactions = $this->getCategoryTransactions($category, [
             'start_date' => $startDate,

@@ -100,7 +100,7 @@ function get_date_range_per_week(string $startDate, string $endDate, string $sta
         if (strtolower($date->format('l')) == $startDay) {
             $dateKey = $date->format('dmY');
         }
-        $dateRanges[$dateKey][] = $date->format('d-m-Y');
+        $dateRanges[$dateKey][] = $date->format('Y-m-d');
     }
 
     return array_values(array_filter($dateRanges));

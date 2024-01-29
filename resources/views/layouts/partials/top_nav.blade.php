@@ -30,13 +30,13 @@
                 <i class="fe fe-repeat h3 d-inline d-lg-none"></i>
                 <span class="d-none d-lg-inline"><i class="fe fe-repeat"></i> {{ __('transaction.transaction') }}</span>
             </a>
-            
+<!--             
             @can('view-any', new App\Models\Lecturing)
                 <a class="xs-navbar mr-4" href="{{ route('lecturings.index') }}" title="{{ __('lecturing.lecturing') }}">
                     <i class="fe fe-book-open h3 d-inline d-lg-none"></i>
                     <span class="d-none d-lg-inline"><i class="fe fe-book-open"></i> {{ __('lecturing.lecturing') }}</span>
                 </a>
-            @endcan
+            @endcan -->
             @can('view-any', new App\Models\Event)
                 <a class="xs-navbar mr-4" href="{{ route('events.index') }}" title="{{ __('event.event') }}">
                     <i class="fe fe-book-open h3 d-inline d-lg-none"></i>

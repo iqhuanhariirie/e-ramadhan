@@ -42,10 +42,10 @@ class WeeklyFinancialSummary extends Component
             return;
         }
         $currentWeekTransactions = $defaultBook->transactions()
-            ->whereBetween('date', [$this->startWeek->format('d-m-Y'), $this->today->format('d-m-Y')])->get();
+            ->whereBetween('date', [$this->startWeek->format('Y-m-d'), $this->today->format('Y-m-d')])->get();
         $this->currentWeekIncomeTotal = $currentWeekTransactions->where('in_out', 1)->sum('amount');
         $this->currentWeekSpendingTotal = $currentWeekTransactions->where('in_out', 0)->sum('amount');
-        $endOfLastWeekDate = today()->startOfWeek()->subDay()->format('d-m-Y');
+        $endOfLastWeekDate = today()->startOfWeek()->subDay()->format('Y-m-d');
         $this->startBalance = auth()->activeBook()->budget;
         // $this->lastBudget = auth()->activeBook()->getCurrentBudget();
         $this->startWeekBalance = $defaultBook->getBalance($endOfLastWeekDate);

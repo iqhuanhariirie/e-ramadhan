@@ -16,9 +16,9 @@ class UpdateRequest extends FormRequest
     {
         return [
             'event_name' => ['required', 'max:255'],
-            'date' => ['required', 'date_format:d-m-Y'],
-            'start_time' => ['required', 'date_format:H:i:s'],
-            'end_time' => ['nullable', 'date_format:H:i:s'],
+            'date' => ['required', 'date_format:Y-m-d'],
+            'start_time' => ['required', 'date_format:H:i'],
+            'end_time' => ['nullable', 'date_format:H:i'],
             'event_description' => ['required', 'max:255'],
         ];
     }

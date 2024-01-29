@@ -2,7 +2,7 @@
 
 return [
     'report' => 'Laporan',
-    'periode' => 'Periode Laporan',
+    'periode' => 'Tempoh Laporan',
     'start_week_day' => 'Hari Awal Minggu',
     'in_months' => 'Mengikut Bulan',
     'in_weeks' => 'Mengikut Minggu',

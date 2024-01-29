@@ -54,7 +54,7 @@ class AppServiceProvider extends ServiceProvider
             $this->getSession()->put('active_book_id', $activeBookId);
         });
 
-        View::composer(['layouts._top_nav_active_book', 'public_reports.finance._public_content_summary'], function ($view) {
+        View::composer(['layouts._top_nav_active_book', 'public_reports.finance._public_content_summary', 'reports.finance._internal_content_summary'], function ($view) {
             $activeBooks = Book::where('status_id', Book::STATUS_ACTIVE)->pluck('name', 'id');
 
             $currentBalance = 0;
@@ -67,13 +67,18 @@ class AppServiceProvider extends ServiceProvider
                 ->get();
             $currentIncomeTotal = $currentTransactions->where('in_out', 1)->sum('amount');
             $currentSpendingTotal = $currentTransactions->where('in_out', 0)->sum('amount');
-            $endOfLastDate = today()->startOfWeek()->subDay()->format('d-m-Y');
+            $endOfLastDate = today()->startOfWeek()->subDay()->format('Y-m-d');
             $startBalance = auth()->activeBook()->budget;
             $currentBalance = $startBalance + $currentIncomeTotal - $currentSpendingTotal;
 
             return $view->with('activeBooks', $activeBooks)
+                ->with('startBalance', $startBalance)
                 ->with('currentBalance', $currentBalance);
         });
+
+        // \Debugbar::disable();
+
+        
     }
 
     /**

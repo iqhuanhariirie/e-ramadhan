@@ -2,7 +2,12 @@
     $currentMonthIncome = $groupedTransactions->has(1) ? $groupedTransactions[1]->sum('amount') : 0;
     $currentMonthSpending = $groupedTransactions->has(0) ? $groupedTransactions[0]->sum('amount') : 0;
     $currentMonthBalance = $lastMonthBalance + $currentMonthIncome - $currentMonthSpending; 
-    $budgetDiff = auth()->activeBook()->budget + $currentMonthBalance;
+    
+    $startBudget = auth()->activeBook()->budget;
+    $budgetDiff = $startBudget + $currentMonthBalance;
+
+    session(['budgetDiff' => $budgetDiff]);
+    session(['startBudget' => $startBudget]);
 @endphp
 <div class="card table-responsive">
     <table class="table table-sm table-bordered mb-0">

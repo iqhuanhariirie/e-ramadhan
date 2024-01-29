@@ -21,7 +21,7 @@ class ExportController extends Controller
     public function byCategory(Category $category)
     {
         $startDate = request('start_date', date('Y-m').'-01');
-        $endDate = request('end_date', date('d-m-Y'));
+        $endDate = request('end_date', date('Y-m-d'));
         $transactions = $this->getCategoryTransactions($category, [
             'book_id' => request('book_id'),
             'start_date' => $startDate,
@@ -35,7 +35,7 @@ class ExportController extends Controller
     public function byBook(Book $book)
     {
         $startDate = request('start_date', date('Y-m').'-01');
-        $endDate = request('end_date', date('d-m-Y'));
+        $endDate = request('end_date', date('Y-m-d'));
         $transactions = $this->getBookTransactions($book, [
             'category_id' => request('category_id'),
             'start_date' => $startDate,

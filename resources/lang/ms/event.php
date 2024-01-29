@@ -40,8 +40,8 @@ return [
     'undeleteable' => 'Data Jadual Program tidak dapat dihapus.',
 
     // Attributes
-    'audience' => 'Untuk Jamaah',
-    'audience_friday' => 'Jumat',
+    'audience' => 'Untuk Jemaah',
+    'audience_friday' => 'Jumaat',
     'audience_public' => 'Umum (Muslim dan Muslimah)',
     'audience_muslimah' => 'Muslimah Sahaja',
     'event_name' => 'Nama Program',

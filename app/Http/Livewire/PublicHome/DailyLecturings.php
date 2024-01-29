@@ -25,7 +25,7 @@ class DailyLecturings extends Component
     public function mount()
     {
         $lecturingQuery = Lecturing::query();
-        $lecturingQuery->where('date', $this->date->format('d-m-Y'));
+        $lecturingQuery->where('date', $this->date->format('Y-m-d'));
         $lecturingQuery->orderBy('date')->orderBy('start_time');
         $this->lecturings = $lecturingQuery->get();
         $this->lecturerName = $this->getLecturerName();

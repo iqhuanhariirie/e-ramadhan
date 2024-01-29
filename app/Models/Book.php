@@ -97,7 +97,7 @@ class Book extends Model
         ->get();
     $currentIncomeTotal = $currentTransactions->where('in_out', 1)->sum('amount');
     $currentSpendingTotal = $currentTransactions->where('in_out', 0)->sum('amount');
-    $endOfLastDate = today()->startOfWeek()->subDay()->format('d-m-Y');
+    $endOfLastDate = today()->startOfWeek()->subDay()->format('Y-m-d');
     $startBalance = $this->getBalance($endOfLastDate);
     $currentBalance = $startBalance + $currentIncomeTotal - $currentSpendingTotal;
 

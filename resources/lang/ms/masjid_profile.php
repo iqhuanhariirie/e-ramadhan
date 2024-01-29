@@ -7,7 +7,7 @@ return [
     // Actions
     'edit' => 'Edit Profil Masjid',
     'update' => 'Update Profil Masjid',
-    'updated' => 'Update data profil masjid telah berhasil.',
+    'updated' => 'Update data profil masjid telah berjaya.',
 
     // Attributes
     'name' => 'Nama Masjid',

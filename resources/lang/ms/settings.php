@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'settings' => 'Pengaturan',
+    'settings' => 'Tetapan',
 ];

@@ -34,7 +34,7 @@ class BookController extends Controller
             'name' => 'required|max:60',
             'description' => 'nullable|max:255',
             'budget' => ['nullable', 'numeric'],
-            'bank_account_id' => 'nullable|exists:bank_accounts,id',
+            // 'bank_account_id' => 'nullable|exists:bank_accounts,id',
         ]);
         $newBook['creator_id'] = auth()->id();
 
@@ -56,7 +56,7 @@ class BookController extends Controller
             ->get();
         $currentIncomeTotal = $currentTransactions->where('in_out', 1)->sum('amount');
         $currentSpendingTotal = $currentTransactions->where('in_out', 0)->sum('amount');
-        $endOfLastDate = today()->startOfWeek()->subDay()->format('d-m-Y');
+        $endOfLastDate = today()->startOfWeek()->subDay()->format('Y-m-d');
         $startBalance = $book->getBalance($endOfLastDate);
         $currentBalance = $startBalance + $currentIncomeTotal - $currentSpendingTotal;
 
@@ -81,10 +81,10 @@ class BookController extends Controller
             'name' => 'required|max:60',
             'description' => 'nullable|max:255',
             'status_id' => ['required', Rule::in(Book::getConstants('STATUS'))],
-            'bank_account_id' => 'nullable|exists:bank_accounts,id',
+            // 'bank_account_id' => 'nullable|exists:bank_accounts,id',
             'report_visibility_code' => ['required', Rule::in(Book::getConstants('REPORT_VISIBILITY'))],
             'budget' => ['nullable', 'numeric'],
-            'report_periode_code' => ['required', Rule::in(Book::getConstants('REPORT_PERIODE'))],
+            // 'report_periode_code' => ['required', Rule::in(Book::getConstants('REPORT_PERIODE'))],
             'start_week_day_code' => ['required', 'string'],
         ]);
         $book->update($bookData);

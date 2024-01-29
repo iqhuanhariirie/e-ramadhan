@@ -19,8 +19,8 @@ class FridayLecturingController extends Controller
         $this->authorize('create', new Lecturing);
 
         $newLecturing = $request->validate([
-            'date' => ['required', 'date_format:d-m-Y'],
-            'start_time' => ['required', 'date_format:H:i:s'],
+            'date' => ['required', 'date_format:Y-m-d'],
+            'start_time' => ['required', 'date_format:H:i'],
             'lecturer_name' => ['required', 'max:60'],
             'title' => ['nullable', 'max:60'],
             'video_link' => ['nullable', 'max:255'],

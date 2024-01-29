@@ -41,9 +41,9 @@
                             <a class="p-2 {{ in_array(Request::segment(1), ['laporan-umum']) ? 'text-primary strong' : 'text-dark' }}" href="{{ route('public_reports.index') }}">
                                 <i class="fe fe-layout"></i> {{ __('report.report') }}
                             </a>
-                            <a class="p-2 {{ in_array(Request::segment(1), ['jadual1']) ? 'text-primary strong' : 'text-dark' }}" href="{{ route('public_schedules.index') }}">
+                            <!-- <a class="p-2 {{ in_array(Request::segment(1), ['jadual1']) ? 'text-primary strong' : 'text-dark' }}" href="{{ route('public_schedules.index') }}">
                                 <i class="fe fe-calendar"></i> {{ __('lecturing.public_schedule') }}
-                            </a>
+                            </a> -->
                             <a class="p-2 {{ in_array(Request::segment(1), ['jadual']) ? 'text-primary strong' : 'text-dark' }}" href="{{ route('public_schedules_event.index') }}">
                                 <i class="fe fe-calendar"></i> {{ __('event.public_schedule_event') }}
                             </a>
