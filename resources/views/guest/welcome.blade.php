@@ -19,16 +19,36 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6">
-            @livewire('public-home.weekly-financial-summary')
-        </div>
-        <div class="col-lg-6">
-            @livewire('public-home.daily-lecturings', ['date' => today(), 'dayTitle' => 'today'])
-            @livewire('public-home.daily-lecturings', ['date' => today()->addDay(), 'dayTitle' => 'tomorrow'])
-        </div>
-        <div class="col-lg-6">
-            @livewire('public-home.daily-events', ['date' => today(), 'dayTitle' => 'today'])
-            @livewire('public-home.daily-events', ['date' => today()->addDay(), 'dayTitle' => 'tomorrow'])
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Weekly Financial Summary</h3>
+            </div>
+            <div class="card-body">
+                @livewire('public-home.weekly-financial-summary')
+            </div>
         </div>
     </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">{{ __('lecturing.dashboard_title') }}</h3>
+            </div>
+            <div class="card-body">
+                @livewire('public-home.daily-lecturings', ['date' => today(), 'dayTitle' => 'today'])
+                @livewire('public-home.daily-lecturings', ['date' => today()->addDay(), 'dayTitle' => 'tomorrow'])
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">{{ __('event.dashboard_title') }}</h3>
+            </div>
+            <div class="card-body">
+                @livewire('public-home.daily-events', ['date' => today(), 'dayTitle' => 'today'])
+                @livewire('public-home.daily-events', ['date' => today()->addDay(), 'dayTitle' => 'tomorrow'])
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection

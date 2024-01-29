@@ -37,14 +37,16 @@ class PublicFinanceController extends FinanceController
         }
         $lastBankAccountBalanceOfTheMonth = $this->getLastBankAccountBalance($currentMonthEndDate);
         $lastMonthBalance = auth()->activeBook()->getBalance($lastMonthDate->format('d-m-Y'));
+        $lastBudget = auth()->activeBook()->getCurrentBudget();
 
         $reportPeriode = $book->report_periode_code;
         $showBudgetSummary = $this->determineBudgetSummaryVisibility($request, $book);
+        // $currentBalance = $startBalance + $currentIncomeTotal - $currentSpendingTotal;
 
         return view('public_reports.finance.'.$reportPeriode.'.summary', compact(
             'startDate', 'endDate', 'groupedTransactions', 'incomeCategories',
             'spendingCategories', 'lastBankAccountBalanceOfTheMonth', 'lastMonthDate',
-            'lastMonthBalance', 'currentMonthEndDate', 'reportPeriode', 'showBudgetSummary'
+            'lastMonthBalance', 'currentMonthEndDate', 'reportPeriode', 'showBudgetSummary', 'lastBudget'
         ));
     }
 

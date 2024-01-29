@@ -29,32 +29,24 @@
                 <span id="current_periode_income_total">{{ format_number($currentIncomeTotal) }}</span>
             </td>
         </tr>
-        @if ($currentBudget)
-            <tr class="{{ $budgetDifferenceColorClass }}">
-                <td class="col-4 strong">
-                    <span id="current_periode_budget_remaining_label">{{ $currentBudgetRemainingLabel }}</span>
-                </td>
-                <td class="col-1 text-right strong">
-                    <span id="current_periode_budget_remaining">{{ format_number(abs($budgetDifference)) }}</span>
-                </td>
-            </tr>
-        @else
-            <tr>
-                <td class="col-4">
-                    <span>{{ __('report.current_periode_spending_total') }}</span>
-                </td>
-                <td class="col-1 text-right">
-                    <span id="current_periode_spending_total">{{ format_number($currentSpendingTotal ? -$currentSpendingTotal : 0) }}</span>
-                </td>
-            </tr>
-            <tr>
+        <tr>
+            <td class="col-4">
+                <span>{{ __('report.current_periode_spending_total') }}</span>
+            </td>
+            <td class="col-1 text-right">
+                <span id="current_periode_spending_total">{{ format_number($currentSpendingTotal) }}</span>
+            </td>
+        </tr>
+        
+           
+        <tr>
                 <td class="col-4">
                     <span id="current_balance_label">{{ __('report.today_balance', ['date' => $today->isoFormat('dddd, D MMM Y')]) }}</span>
                 </td>
                 <td class="col-1 text-right">
-                    <span id="current_balance">{{ format_number($currentBalance) }}</span>
+                    <span id="current_balance">{{ format_number($latestBudget) }}</span>
                 </td>
-            </tr>
-        @endif
+        </tr>
+        
     </tbody>
 </table>

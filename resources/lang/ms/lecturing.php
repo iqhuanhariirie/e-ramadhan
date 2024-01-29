@@ -4,6 +4,7 @@ return [
     // Labels
     'lecturing' => 'Jadual Pengajian',
     'lecturing' => 'Pengajian',
+    'dashboard_title' => 'Pengajian Harian',
     'public_schedule' => 'Jadual Mengajar',
     'list' => 'Daftar Jadual Pengajian',
     'search' => 'Cari Jadual Pengajian',
@@ -39,8 +40,8 @@ return [
     'undeleteable' => 'Data Jadual Pengajian tidak dapat dihapus.',
 
     // Attributes
-    'audience' => 'Untuk Jamaah',
-    'audience_friday' => 'Jumat',
+    'audience' => 'Untuk Jemaah',
+    'audience_friday' => 'Jumaat',
     'audience_public' => 'Umum (Muslim dan Muslimah)',
     'audience_muslimah' => 'Khusus Muslimah',
     'date' => 'Tanggal',
@@ -48,7 +49,7 @@ return [
     'start_time' => 'Waktu Mulai',
     'end_time' => 'Waktu Selesai',
     'time_text' => 'Waktu Teks',
-    'time_text_placeholder' => 'Ba\'da Magrib',
+    'time_text_placeholder' => 'Selepas Maghrib',
     'lecturer_name' => 'Penceramah',
     'friday_lecturer_name' => 'Khatib',
     'book_title' => 'Judul Kitab',
@@ -58,6 +59,6 @@ return [
     'book_link' => 'Link Download Buku',
     'video_link' => 'Link Video',
     'audio_link' => 'Link Audio',
-    'title' => 'Pembahasan',
+    'title' => 'Tajuk',
     'description' => 'Keterangan',
 ];

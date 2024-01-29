@@ -54,7 +54,7 @@ class AppServiceProvider extends ServiceProvider
             $this->getSession()->put('active_book_id', $activeBookId);
         });
 
-        View::composer(['layouts._top_nav_active_book'], function ($view) {
+        View::composer(['layouts._top_nav_active_book', 'public_reports.finance._public_content_summary'], function ($view) {
             $activeBooks = Book::where('status_id', Book::STATUS_ACTIVE)->pluck('name', 'id');
 
             $currentBalance = 0;

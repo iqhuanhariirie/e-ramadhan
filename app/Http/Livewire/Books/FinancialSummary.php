@@ -13,6 +13,7 @@ class FinancialSummary extends Component
     public $start;
     public $isAlltime = true;
     public $currentBudget = 0;
+    public $latestBudget = 0;
     public $currentBalance = 0;
     public $startBalance = 0;
     public $currentIncomeTotal = 0;
@@ -52,6 +53,7 @@ class FinancialSummary extends Component
         $this->currentIncomeTotal += $this->startBalance;
         $this->currentBalance -= $this->startBalance;
         $this->budgetDifference = $book->budget - $this->currentBalance;
+        $this->latestBudget = $book->budget + $this->currentBalance;
         $this->currentPeriodeBudgetLabel = __('report.current_'.$book->report_periode_code.'_budget');
 
         $this->budgetDifferenceColorClass = 'text-red';

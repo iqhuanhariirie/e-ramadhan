@@ -6,7 +6,7 @@ return [
     'list' => 'Daftar Transaksi',
     'search' => 'Cari Transaksi',
     'search_text' => 'Cari transaksi...',
-    'income' => 'Pemasukan',
+    'income' => 'Kemasukan',
     'spending' => 'Pengeluaran',
     'detail' => 'Detail Transaksi',
     'not_found' => 'Transaksi tidak ditemukan.',
@@ -15,7 +15,7 @@ return [
     'back_to_show' => 'Kembali ke detail Transaksi',
     'back_to_index' => 'Kembali ke daftar Transaksi',
 
-    'income_total' => 'Total Pemasukan',
+    'income_total' => 'Total Kemasukan',
     'spending_total' => 'Total Pengeluaran',
     'difference' => 'Selisih',
     'start_balance' => 'Dana yang diberi',
@@ -26,8 +26,8 @@ return [
     'no_book' => 'Tanpa Book',
 
     // Actions
-    'add_income' => 'Input Pemasukan',
-    'income_added' => 'Pemasukan berhasil diinput.',
+    'add_income' => 'Input Kemasukan',
+    'income_added' => 'Kemasukan berhasil diinput.',
     'add_spending' => 'Input Pengeluaran',
     'spending_added' => 'Pengeluaran berhasil diinput.',
     'show' => 'Lihat Detail Transaksi',
@@ -44,5 +44,5 @@ return [
     // Attributes
     'amount' => 'Jumlah',
     'description' => 'Deskripsi Transaksi',
-    'in_out' => 'Pemasukan/Pengeluaran',
+    'in_out' => 'Kemasukan/Pengeluaran',
 ];

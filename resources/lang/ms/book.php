@@ -37,7 +37,7 @@ return [
     'name' => 'Nama Buku Tunai',
     'description' => 'Deskripsi Buku Tunai',
     'status_inactive' => 'Tutup Buku',
-    'budget' => 'Anggaran',
+    'budget' => 'Dana',
     'budget_difference' => 'Kekurangan/Kelebihan',
     'visibility' => 'Visibility',
     'report_visibility' => 'Visibility Laporan',

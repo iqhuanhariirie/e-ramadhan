@@ -84,4 +84,24 @@ class Book extends Model
     {
         return sha1($this->id.config('app.key'));
     }
+
+    public function getCurrentBudget(): float
+{
+    $currentBalance = 0;
+    $startBalance = 0;
+    $currentIncomeTotal = 0;
+    $currentSpendingTotal = 0;
+
+    $currentTransactions = $this->transactions()
+        ->withoutGlobalScope('forActiveBook')
+        ->get();
+    $currentIncomeTotal = $currentTransactions->where('in_out', 1)->sum('amount');
+    $currentSpendingTotal = $currentTransactions->where('in_out', 0)->sum('amount');
+    $endOfLastDate = today()->startOfWeek()->subDay()->format('d-m-Y');
+    $startBalance = $this->getBalance($endOfLastDate);
+    $currentBalance = $startBalance + $currentIncomeTotal - $currentSpendingTotal;
+
+    return $currentBalance;
+}
+
 }

@@ -4,6 +4,7 @@ return [
     // Labels
     'event' => 'Jadual Program',
     'event' => 'Program',
+    'dashboard_title' => 'Program Harian',
     'public_schedule_event' => 'Jadual Program',
     'list' => 'Daftar Jadual Program',
     'search' => 'Cari Jadual Program',

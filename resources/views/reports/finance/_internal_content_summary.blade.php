@@ -9,13 +9,13 @@
         </tr>
     </thead>
     <tbody>
-        @if ($lastMonthBalance || auth()->activeBook()->bank_account_id)
+        @if ($lastMonthBalance || auth()->activeBook()->budget)
             <tr><td colspan="5">{{ __('transaction.balance') }}</td></tr>
         @endif
-        @if (auth()->activeBook()->bank_account_id)
+        @if (auth()->activeBook()->budget)
             <tr>
                 <td class="text-center">1</td>
-                <td>Saldo per {{ Carbon\Carbon::parse($lastBankAccountBalanceOfTheMonth->date)->isoFormat('D MMMM Y') }} di BANK</td>
+                <td>Baki pada {{ Carbon\Carbon::parse($lastBankAccountBalanceOfTheMonth->date)->isoFormat('D MMMM Y') }} di BANK</td>
                 <td class="text-right">-</td>
                 <td class="text-right">-</td>
                 <td class="text-right text-nowrap">{{ format_number($lastBankAccountBalanceOfTheMonth->amount) }}</td>
@@ -24,9 +24,9 @@
         @if ($lastMonthBalance)
             <tr>
                 <td class="text-center">
-                    {{ auth()->activeBook()->bank_account_id ? '2' : '1' }}
+                    {{ auth()->activeBook()->budget ? '2' : '1' }}
                 </td>
-                <td>Sisa saldo per {{ $lastMonthDate->isoFormat('D MMMM Y') }}</td>
+                <td>Sisa baki mengikut {{ $lastMonthDate->isoFormat('D MMMM Y') }}</td>
                 <td class="text-right text-nowrap">{{ format_number($lastMonthBalance) }}</td>
                 <td class="text-right text-nowrap">-</td>
                 <td class="text-center text-nowrap">&nbsp;</td>
@@ -97,7 +97,7 @@
         <tr class="strong">
             <td>&nbsp;</td>
             <td class="text-center">
-                {{ auth()->activeBook()->bank_account_id ? 'Selisih' : '' }} Saldo {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}
+                {{ auth()->activeBook()->budget ? 'Selisih' : '' }} baki {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}
             </td>
             <td class="text-right">
                 @php
@@ -118,7 +118,7 @@
                 {{ format_number($currentMonthBalance) }}
             </td>
         </tr>
-        @if (auth()->activeBook()->bank_account_id)
+        @if (auth()->activeBook()->budget)
         <tr class="strong">
             <td>&nbsp;</td>
             <td class="text-center">Jumlah baki per {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}</td>

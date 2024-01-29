@@ -5,6 +5,7 @@ return [
     'event' => 'Event Schedule',
     'event' => 'Event',
     'public_schedule_event' => 'Event Schedule',
+    'dashboard_title' => 'Daily Events',
     'list' => 'Event Schedules',
     'search' => 'Find Event Schedule',
     'search_text' => 'Lecturer name ...',

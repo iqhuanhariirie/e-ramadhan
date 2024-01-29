@@ -11,7 +11,7 @@
             <td class="col-xs-2 text-center text-success">{{ __('report.current_periode_income_total') }}</td>
             <td class="col-xs-2 text-center text-red">{{ __('report.current_periode_spending_total') }}</td>
             <td class="col-xs-2 text-center">{{ __('report.current_net_income') }}</td>
-            <td class="col-xs-2 text-center strong {{ $budgetDiff > 0 ? 'text-red' : 'text-success' }}">
+            <td class="col-xs-2 text-center strong text-blue">
                 @if ($budgetDiff > 0)
                     {{ __('report.current_periode_budget_remaining') }}
                 @else
@@ -24,7 +24,7 @@
             <td class="text-center lead text-success" style="border-top: none;">{{ format_number($lastMonthBalance + $currentMonthIncome) }}</td>
             <td class="text-center lead text-red" style="border-top: none;">{{ format_number($currentMonthSpending) }}</td>
             <td class="text-center lead" style="border-top: none;">{{ format_number($currentMonthBalance) }}</td>
-            <td class="text-center lead strong {{ $budgetDiff > 0 ? 'text-red' : 'text-success' }}" style="border-top: none;">
+            <td class="text-center lead strong text-blue" style="border-top: none;">
                 {{ format_number(abs($budgetDiff)) }}
             </td>
         </tr>

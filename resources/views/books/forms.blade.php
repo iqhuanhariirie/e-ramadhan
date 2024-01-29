@@ -13,12 +13,12 @@
                     {!! FormField::text('name', ['required' => true, 'label' => __('book.name')]) !!}
                     {!! FormField::textarea('description', ['label' => __('book.description')]) !!}
                     <div class="row">
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                             {!! FormField::select('bank_account_id', $bankAccounts, [
                                 'label' => __('bank_account.bank_account'),
                                 'placeholder' => __('book.no_bank_account'),
                             ]) !!}
-                        </div>
+                        </div> -->
                         <div class="col-md-6">
                             {!! FormField::price('budget', [
                                 'label' => __('book.budget'),

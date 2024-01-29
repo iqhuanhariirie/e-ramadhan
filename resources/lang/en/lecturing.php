@@ -5,6 +5,7 @@ return [
     'lecturing' => 'Lecturing Schedule',
     'lecturing' => 'Lecturing',
     'public_schedule' => 'Lecture Schedule',
+    'dashoboard_title' => 'Daily Lecturings',
     'list' => 'Lecturing Schedules',
     'search' => 'Find Lecturing Schedule',
     'search_text' => 'Lecturer name ...',
