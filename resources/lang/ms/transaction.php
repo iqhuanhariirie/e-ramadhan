@@ -19,7 +19,7 @@ return [
     'spending_total' => 'Total Pengeluaran',
     'difference' => 'Kemasukan Bersih',
     'difference1' => 'Beza',
-    'start_balance' => 'Dana yang diberi',
+    'start_balance' => 'Dana yang diperuntukkan',
     'early_balance' => 'Dana awal',
     'end_balance' => 'Baki Akhir',
     'current_balance' => 'Baki Sekarang',

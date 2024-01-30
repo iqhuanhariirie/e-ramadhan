@@ -1,6 +1,6 @@
 <div class="card table-responsive-sm">
-    <table class="table table-sm table-hover">
-        <thead>
+    <table class="table table-striped table-hover table-sm">
+        <thead class="thead-light">
             <tr>
                 <th class="text-center">{{ __('app.table_no') }}</th>
                 <th class="col-1">{{ __('time.day_name') }}</th>

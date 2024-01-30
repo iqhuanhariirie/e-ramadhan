@@ -19,7 +19,7 @@ class CreateRequest extends FormRequest
             'date' => ['required', 'date_format:Y-m-d'],
             'start_time' => ['required', 'date_format:H:i'],
             'end_time' => ['nullable', 'date_format:H:i'],
-            'event_description' => ['required', 'max:255'],
+            'event_description' => ['nullable', 'max:255'],
             'audience_code' => ['required', 'max:15'],
         ];
     }

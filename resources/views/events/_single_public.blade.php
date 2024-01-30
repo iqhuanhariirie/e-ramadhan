@@ -1,5 +1,5 @@
 <div class="card">
-    <table class="table-sm mb-0">
+    <table class="table table-striped table-hover table-sm mb-0">
         <tbody>
             <tr>
                 <td class="col-4">{!! config('event.emoji.event') !!} {{ __('event.event') }}</td>
@@ -20,7 +20,7 @@
                             'events.show',
                             __('app.show'),
                             [$event],
-                            ['id' => 'show-event-' . $event->id]
+                            ['id' => 'show-event-' . $event->id, 'class' => 'btn btn-primary']
                         ) }}
                     @endcan
                 </td>

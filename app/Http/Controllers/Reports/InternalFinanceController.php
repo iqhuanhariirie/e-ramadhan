@@ -170,7 +170,7 @@ class InternalFinanceController extends FinanceController
             if (!$weekTransactions->isEmpty()) {
                 $firstBalance = new Transaction([
                     'date' => null,
-                    'description' => 'Saldo per '.$lastWeekDate->isoFormat('D MMMM Y'),
+                    'description' => 'Baki mengikut '.$lastWeekDate->isoFormat('D MMMM Y'),
                     'in_out' => 1,
                     'amount' => auth()->activeBook()->getBalance($lastWeekDate->format('Y-m-d')),
                 ]);

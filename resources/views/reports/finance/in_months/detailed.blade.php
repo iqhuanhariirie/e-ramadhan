@@ -4,12 +4,7 @@
 
 @section('content-report')
 
-@if (request('action') && request('book_id') && request('nonce'))
-    @include('reports.finance._edit_report_title_form', [
-        'reportType' => 'detailed',
-        'existingReportTitle' => __('report.weekly'),
-    ])
-@endif
+
 
 <div class="page-header mt-0">
     <h1 class="page-title mb-4">

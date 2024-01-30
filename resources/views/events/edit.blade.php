@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 {!! FormField::text('event_name', ['required' => true, 'label' => __('event.event_name')]) !!}
-                {!! FormField::textarea('event_description', ['label' => __('event.event_description')]) !!}
+                {!! FormField::textarea('event_description', ['required' => false, 'label' => __('event.event_description')]) !!}
             </div>
             <div class="card-footer">
                 {{ Form::submit(__('event.update'), ['class' => 'btn btn-success']) }}

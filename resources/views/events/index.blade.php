@@ -18,11 +18,6 @@
                     {{ link_to_route('events.create', __('event.create'), [], ['class' => 'btn btn-success mr-0 mr-sm-2']) }}
                 @endcan
             </div>
-            <div class="form-group mt-0 mt-sm-0">
-                @can('create', new App\Models\Lecturing)
-                    {{ link_to_route('lecturings.create', __('lecturing.create'), [], ['class' => 'btn btn-success mr-0 mr-sm-2']) }}
-                @endcan
-            </div>
         {{ Form::close() }}
     </div>
 </div>
@@ -33,11 +28,15 @@
     </div>
 
     @desktop
-        @include('events._'.$audienceCode)
+        <div class="table-responsive">
+            @include('events._'.$audienceCode)
+        </div>
     @elsedesktop
         @if (isset($events[$audienceCode]))
             @foreach($events[$audienceCode] as $event)
-                @include('events._single_'.$audienceCode)
+                <div class="table-responsive">
+                    @include('events._single_'.$audienceCode)
+                </div>
             @endforeach
         @else
             <p>{{ __('event.'.$audienceCode.'_empty') }}</p>

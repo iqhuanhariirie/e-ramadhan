@@ -50,7 +50,7 @@ return [
     'start_time' => 'Waktu Mula',
     'end_time' => 'Waktu Tamat',
     'time_text' => 'Waktu Teks',
-    'time_text_placeholder' => 'Ba\'da Magrib',
+    'time_text_placeholder' => 'Selepas Magrib',
     'lecturer_name' => 'Penceramah',
     'friday_lecturer_name' => 'Khatib',
     'book_title' => 'Judul Kitab',

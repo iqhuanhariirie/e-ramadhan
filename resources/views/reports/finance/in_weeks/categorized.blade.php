@@ -4,12 +4,7 @@
 
 @section('content-report')
 
-@if (request('action') && request('book_id') && request('nonce'))
-    @include('reports.finance._edit_report_title_form', [
-        'reportType' => 'categorized',
-        'existingReportTitle' => __('report.categorized_transactions'),
-    ])
-@endif
+
 
 <div class="page-header my-0">
     <h1 class="page-title mb-4">
