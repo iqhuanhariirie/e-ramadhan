@@ -14,41 +14,13 @@
         </tr>
         <tr>
             <td class="text-center">1</td>
-            <td>Dana awal</td>
+            <td>{{ __('transaction.early_balance') }}</td>
             <td class="text-right">-</td>
             <td class="text-right">-</td>
             <td class="text-right text-nowrap">{{ format_number($startBalance) }}</td>
             
         </tr>
         <tr><td class="text-center text-nowrap">&nbsp;</td></tr>
-        <!-- @if ($lastMonthBalance || auth()->activeBook()->budget)
-        <tr>
-            <td colspan="5">{{ __('transaction.balance') }}</td>
-        </tr>
-        @endif
-        @if (auth()->activeBook()->budget)
-            @php
-                $startBudget = session('startBudget');
-            @endphp
-        <tr>
-            <td class="text-center">1</td>
-            <td>Baki pada {{ Carbon\Carbon::parse($lastBankAccountBalanceOfTheMonth->date)->isoFormat('D MMMM Y') }}</td>
-            <td class="text-right">-</td>
-            <td class="text-right">-</td>
-            <td class="text-right text-nowrap">{{ format_number($currentBalance) }}</td>
-        </tr>
-        @endif
-        @if ($lastMonthBalance)
-        <tr>
-            <td class="text-center">
-                {{ auth()->activeBook()->budget ? '2' : '1' }}
-            </td>
-            <td>Sisa baki mengikut {{ $lastMonthDate->isoFormat('D MMMM Y') }}</td>
-            <td class="text-right text-nowrap">{{ format_number($lastMonthBalance) }}</td>
-            <td class="text-right text-nowrap">-</td>
-            <td class="text-center text-nowrap">&nbsp;</td>
-        </tr>
-        @endif -->
         <tr>
             <td colspan="5">{{ __('transaction.income') }}</td>
         </tr>

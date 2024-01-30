@@ -17,25 +17,25 @@ return [
 
     // Actions
     'create' => 'Input Kategori Baru',
-    'created' => 'Input Kategori baru telah berhasil.',
+    'created' => 'Input Kategori baru telah berjaya.',
     'show' => 'Lihat Detail Kategori',
     'edit' => 'Edit Kategori',
     'update' => 'Update Kategori',
-    'updated' => 'Update data Kategori telah berhasil.',
+    'updated' => 'Update data Kategori telah berjaya.',
     'delete' => 'Hapus Kategori',
     'delete_confirm' => 'Anda yakin akan menghapus Kategori ini?',
-    'deleted' => 'Hapus data Kategori telah berhasil.',
+    'deleted' => 'Hapus data Kategori telah berjaya.',
     'undeleted' => 'Data Kategori gagal dihapus.',
     'undeleteable' => 'Data Kategori tidak dapat dihapus.',
     'delete_transactions' => 'Hapus semua Transaksi pada Kategori ini',
 
     // Attributes
     'name' => 'Nama Kategori',
-    'description' => 'Deskripsi Kategori',
+    'description' => 'Keterangan Kategori',
     'color' => 'Warna Kategori',
-    'visibility' => 'Visibilitas',
-    'report_visibility' => 'Visibilitas Laporan',
-    'report_visibility_public' => 'Publik',
+    'visibility' => 'Visibility',
+    'report_visibility' => 'Visibility Laporan',
+    'report_visibility_public' => 'Public',
     'report_visibility_internal' => 'Internal',
 
     // Relations

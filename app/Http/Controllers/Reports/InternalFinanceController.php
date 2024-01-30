@@ -25,7 +25,7 @@ class InternalFinanceController extends FinanceController
         if ($startDate->format('Y-m') == Carbon::now()->format('Y-m')) {
             $currentMonthEndDate = Carbon::now();
         }
-        $lastBankAccountBalanceOfTheMonth = $this->getLastBankAccountBalance($currentMonthEndDate);
+        // $lastBankAccountBalanceOfTheMonth = $this->getLastBankAccountBalance($currentMonthEndDate);
         $lastMonthBalance = auth()->activeBook()->getBalance($lastMonthDate->format('Y-m-d'));
 
         $reportPeriode = $book->report_periode_code;
@@ -33,7 +33,7 @@ class InternalFinanceController extends FinanceController
 
         return view('reports.finance.'.$reportPeriode.'.summary', compact(
             'startDate', 'endDate', 'groupedTransactions', 'incomeCategories',
-            'spendingCategories', 'lastBankAccountBalanceOfTheMonth', 'lastMonthDate',
+            'spendingCategories', 'lastMonthDate',
             'lastMonthBalance', 'currentMonthEndDate', 'reportPeriode', 'showBudgetSummary'
         ));
     }
@@ -52,7 +52,7 @@ class InternalFinanceController extends FinanceController
         if ($startDate->format('Y-m') == Carbon::now()->format('Y-m')) {
             $currentMonthEndDate = Carbon::now();
         }
-        $lastBankAccountBalanceOfTheMonth = $this->getLastBankAccountBalance($currentMonthEndDate);
+        // $lastBankAccountBalanceOfTheMonth = $this->getLastBankAccountBalance($currentMonthEndDate);
         $lastMonthBalance = auth()->activeBook()->getBalance($lastMonthDate->format('Y-m-d'));
         $showLetterhead = $this->showLetterhead();
 
@@ -61,7 +61,7 @@ class InternalFinanceController extends FinanceController
 
         $passedVariables = compact(
             'startDate', 'endDate', 'groupedTransactions', 'incomeCategories',
-            'spendingCategories', 'lastBankAccountBalanceOfTheMonth', 'lastMonthDate',
+            'spendingCategories', 'lastMonthDate',
             'lastMonthBalance', 'currentMonthEndDate', 'showLetterhead', 'reportPeriode', 'showBudgetSummary'
         );
 
@@ -184,30 +184,30 @@ class InternalFinanceController extends FinanceController
         return collect($groupedTransactions);
     }
 
-    private function getLastBankAccountBalance(Carbon $currentMonthEndDate): BankAccountBalance
-    {
-        $activeBookBankAccount = auth()->activeBook()->bankAccount;
-        if (is_null($activeBookBankAccount)) {
-            return new BankAccountBalance([
-                'date' => $currentMonthEndDate->format('Y-m-d'),
-                'amount' => 0,
-            ]);
-        }
+    // private function getLastBankAccountBalance(Carbon $currentMonthEndDate): BankAccountBalance
+    // {
+    //     $activeBookBankAccount = auth()->activeBook()->bankAccount;
+    //     if (is_null($activeBookBankAccount)) {
+    //         return new BankAccountBalance([
+    //             'date' => $currentMonthEndDate->format('Y-m-d'),
+    //             'amount' => 0,
+    //         ]);
+    //     }
 
-        $currentMonthBalance = $activeBookBankAccount->balances()
-            ->where('date', '<=', $currentMonthEndDate->format('Y-m-d'))
-            ->orderBy('date', 'desc')
-            ->first();
+    //     $currentMonthBalance = $activeBookBankAccount->balances()
+    //         ->where('date', '<=', $currentMonthEndDate->format('Y-m-d'))
+    //         ->orderBy('date', 'desc')
+    //         ->first();
 
-        if (is_null($currentMonthBalance)) {
-            return new BankAccountBalance([
-                'date' => $currentMonthEndDate->format('Y-m-d'),
-                'amount' => 0,
-            ]);
-        }
+    //     if (is_null($currentMonthBalance)) {
+    //         return new BankAccountBalance([
+    //             'date' => $currentMonthEndDate->format('Y-m-d'),
+    //             'amount' => 0,
+    //         ]);
+    //     }
 
-        return $currentMonthBalance;
-    }
+    //     return $currentMonthBalance;
+    // }
 
     // to inform the views (including css style) to show the letterhead only if masjid name and address not empty
     private function showLetterhead(): bool

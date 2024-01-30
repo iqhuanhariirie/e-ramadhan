@@ -16,14 +16,14 @@ class BookController extends Controller
 
         $editableBook = null;
         $bookQuery = Book::orderBy('name');
-        $books = $bookQuery->with('creator', 'bankAccount')->paginate(25);
-        $bankAccounts = BankAccount::where('is_active', BankAccount::STATUS_ACTIVE)->pluck('name', 'id');
+        $books = $bookQuery->with('creator')->paginate(25);
+        // $bankAccounts = BankAccount::where('is_active', BankAccount::STATUS_ACTIVE)->pluck('name', 'id');
 
         if (in_array(request('action'), ['edit', 'delete']) && request('id') != null) {
             $editableBook = Book::find(request('id'));
         }
 
-        return view('books.index', compact('books', 'editableBook', 'bankAccounts'));
+        return view('books.index', compact('books', 'editableBook'));
     }
 
     public function store(Request $request)
@@ -68,9 +68,9 @@ class BookController extends Controller
     public function edit(Book $book)
     {
         $this->authorize('update', $book);
-        $bankAccounts = BankAccount::where('is_active', BankAccount::STATUS_ACTIVE)->pluck('name', 'id');
+        // $bankAccounts = BankAccount::where('is_active', BankAccount::STATUS_ACTIVE)->pluck('name', 'id');
 
-        return view('books.edit', compact('book', 'bankAccounts'));
+        return view('books.edit', compact('book'));
     }
 
     public function update(Request $request, Book $book)

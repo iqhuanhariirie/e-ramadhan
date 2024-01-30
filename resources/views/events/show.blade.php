@@ -12,11 +12,7 @@
             </div>
             <table class="table table-sm">
                 <tbody>
-                    <tr>
-                        <td class="col-4">{!! config('event.emoji.event') !!} {{ __('event.event') }}</td>
-                        <td><strong>{{ $event->day_name }}</strong></td>
-                    </tr>
-                    <tr><td>{!! config('event.emoji.date') !!} {{ __('time.date') }}</td><td>{{ $event->full_date }}</td></tr>
+                    <tr><td>{!! config('event.emoji.date') !!} {{ __('time.date') }}</td><td><strong>{{ $event->day_name }}</strong>, {{ $event->full_date }}</td></tr>
                     <tr><td>{!! config('event.emoji.time') !!} {{ __('event.time') }}</td><td>{{ $event->time }}</td></tr>
                     <tr><td>{!! config('event.emoji.event_name') !!} {{ __('event.event_name') }}</td><td>{{ $event->event_name }}</td></tr>
                     <tr><td>{!! config('event.emoji.event_description') !!} {{ __('event.event_description') }}</td><td>{{ $event->event_description }}</td></tr>
