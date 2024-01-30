@@ -16,16 +16,14 @@
                             <p>{{ $book->name }}</p>
                             <label class="control-label text-primary">{{ __('book.description') }}</label>
                             <p>{{ $book->description }}</p>
-                            <label class="control-label text-primary">{{ __('bank_account.bank_account') }}</label>
-                            <p>{{ optional($book->bankAccount)->name }}</p>
+                            
                             <label class="control-label text-primary">{{ __('book.budget') }}</label>
                             <p>{{ $book->budget }}</p>
                         </div>
                         <div class="col-md-6">
                             <label class="control-label text-primary">{{ __('book.report_visibility') }}</label>
                             <p>{{ __('book.report_visibility_'.$book->report_visibility_code) }}</p>
-                            <label class="control-label text-primary">{{ __('report.periode') }}</label>
-                            <p>{{ __('report.'.$book->report_periode_code) }}</p>
+                            
                             <label class="control-label text-primary">{{ __('report.start_week_day') }}</label>
                             <p>{{ __('time.days.'.$book->start_week_day_code) }}</p>
                         </div>
@@ -61,7 +59,7 @@
                         
                         <div class="col-md-6">
                             {!! FormField::price('budget', [
-                                'label' => 'Funds',
+                                'label' => __('book.budget'),
                                 'type' => 'number',
                                 'currency' => config('money.currency_code'),
                                 'step' => number_step()
