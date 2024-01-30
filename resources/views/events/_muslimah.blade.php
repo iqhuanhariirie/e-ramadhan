@@ -28,7 +28,7 @@
                                 'events.show',
                                 __('app.show'),
                                 [$event],
-                                ['id' => 'show-event-' . $event->id]
+                                ['id' => 'show-event-' . $event->id, 'class' => 'btn btn-primary']
                             ) }}
                         @endcan
                     </td>

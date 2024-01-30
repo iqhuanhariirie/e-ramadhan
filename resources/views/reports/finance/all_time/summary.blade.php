@@ -14,14 +14,7 @@
             {{ __('report.all_time') }}
         @endif
 
-        @can('update', auth()->activeBook())
-            {{ link_to_route(
-                'reports.finance.summary',
-                __('book.change_report_title'),
-                request()->all() + ['action' => 'change_report_title', 'book_id' => auth()->activeBook()->id, 'nonce' => auth()->activeBook()->nonce],
-                ['class' => 'btn btn-success btn-sm', 'id' => 'change_report_title']
-            ) }}
-        @endcan
+        
     </h1>
     <div class="page-options d-flex">
         {{ Form::open(['method' => 'get', 'class' => 'form-inline']) }}
