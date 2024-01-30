@@ -3,10 +3,10 @@
 @section('title', __('app.welcome'))
 
 @section('content')
-    <div class="jumbotron p-5 mb-0 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
+    <div class="jumbotron p-6 mb-0 text-white rounded bg-dark">
+        <div class="col-md-3 px-0">
             <h1 class="display-4 font-italic">
-                @yield('title'),<br> {{ config('masjid.name') }}
+                @yield('title'),{{ config('masjid.name') }}
             </h1>
             <p class="lead my-3">
                 <a class="btn btn-lg btn-primary mr-3" href="{{ route('public_reports.index') }}"
