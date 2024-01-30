@@ -86,7 +86,7 @@
         <tr class="strong">
             <td>&nbsp;</td>
             <td class="text-center">
-                {{ auth()->activeBook()->budget ? 'Selisih' : '' }} {{ __('transaction.balance') }} {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}
+            {{ auth()->activeBook()->budget ? __('transaction.difference1') : '' }} baki {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}
             </td>
             <td class="text-right">
                 @php
@@ -110,7 +110,7 @@
         @if (auth()->activeBook()->budget)
         <tr class="strong">
             <td>&nbsp;</td>
-            <td class="text-center">Total baki akhir mengikut {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}</td>
+            <td class="text-center">{{ __('transaction.current_balance') }} {{ $currentMonthEndDate->isoFormat('D MMMM Y') }}</td>
             <td class="text-right">-</td>
             <td class="text-right">-</td>
             <td class="text-right">
