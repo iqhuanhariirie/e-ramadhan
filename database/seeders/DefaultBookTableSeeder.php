@@ -11,7 +11,7 @@ class DefaultBookTableSeeder extends Seeder
     {
         Book::create([
             'name' => 'Kegiatan Rutin',
-            'description' => 'Buku catatan keuangan kegiatan rutin',
+            'description' => 'Buku catatan kewangan kegiatan rutin',
             'creator_id' => null,
             'report_visibility_code' => 'public',
         ]);
