@@ -34,7 +34,7 @@
                 {!! FormField::textarea('event_description', ['label' => __('event.event_description')]) !!}
             </div>
             <div class="card-footer">
-                {{ Form::submit(__('app.create'), ['class' => 'btn btn-success']) }}
+                {{ Form::submit(__('event.create'), ['class' => 'btn btn-success']) }}
                 {{ link_to_route('events.index', __('app.cancel'), [], ['class' => 'btn btn-link']) }}
             </div>
             {{ Form::close() }}

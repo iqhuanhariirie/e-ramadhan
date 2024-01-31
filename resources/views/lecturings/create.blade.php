@@ -41,7 +41,7 @@
                 {!! FormField::textarea('description', ['label' => __('lecturing.description')]) !!}
             </div>
             <div class="card-footer">
-                {{ Form::submit(__('app.create'), ['class' => 'btn btn-success']) }}
+                {{ Form::submit(__('event.create'), ['class' => 'btn btn-success']) }}
                 {{ link_to_route('lecturings.index', __('app.cancel'), [], ['class' => 'btn btn-link']) }}
             </div>
             {{ Form::close() }}
